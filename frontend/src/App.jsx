@@ -15,7 +15,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/meliorism-website">
+    <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
