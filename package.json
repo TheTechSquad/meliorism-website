@@ -5,5 +5,7 @@
     "build": "cd frontend && npm ci && npm run build",
     "dev": "cd frontend && npm start",
     "install": "cd frontend && npm install"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
