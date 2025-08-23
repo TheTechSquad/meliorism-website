@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/meliorism-website/static/css/main.8a18cf3f.css",
-    "main.js": "/meliorism-website/static/js/main.6fe84f63.js",
+    "main.js": "/meliorism-website/static/js/main.c4d07ced.js",
     "index.html": "/meliorism-website/index.html",
     "main.8a18cf3f.css.map": "/meliorism-website/static/css/main.8a18cf3f.css.map",
-    "main.6fe84f63.js.map": "/meliorism-website/static/js/main.6fe84f63.js.map"
+    "main.c4d07ced.js.map": "/meliorism-website/static/js/main.c4d07ced.js.map"
   },
   "entrypoints": [
     "static/css/main.8a18cf3f.css",
-    "static/js/main.6fe84f63.js"
+    "static/js/main.c4d07ced.js"
   ]
 }
