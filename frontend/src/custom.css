@@ -1,0 +1,136 @@
+/* Custom CSS for Meliorism Partners Foundation */
+/* Logo-inspired color scheme */
+
+:root {
+  --meliorism-primary: #4F777F;
+  --meliorism-primary-dark: #175760;
+  --meliorism-secondary: #DDD6DD;
+  --meliorism-light: #F4F2F5;
+  --meliorism-gray: #CFCED3;
+}
+
+/* Override Bootstrap primary color with new palette */
+.bg-primary {
+  background-color: var(--meliorism-primary) !important;
+}
+
+.text-primary {
+  color: var(--meliorism-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--meliorism-primary);
+  border-color: var(--meliorism-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--meliorism-primary-dark);
+  border-color: var(--meliorism-primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--meliorism-primary);
+  border-color: var(--meliorism-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--meliorism-primary);
+  border-color: var(--meliorism-primary);
+}
+
+/* Navbar styling */
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero section enhancements */
+.hero-section {
+  background: linear-gradient(135deg, var(--meliorism-light) 0%, var(--meliorism-gray) 100%);
+}
+
+/* Core values section styling */
+.bg-primary.rounded-circle {
+  background: linear-gradient(135deg, var(--meliorism-primary) 0%, var(--meliorism-primary-dark) 100%) !important;
+  box-shadow: 0 4px 8px rgba(79, 119, 127, 0.3);
+}
+
+/* Card hover effects */
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(79, 119, 127, 0.2);
+}
+
+/* Footer styling */
+footer.bg-dark {
+  background: linear-gradient(135deg, var(--meliorism-primary-dark) 0%, var(--meliorism-primary) 100%) !important;
+}
+
+/* Logo styling in hero section */
+.hero-section img {
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 16px rgba(79, 119, 127, 0.3);
+}
+
+.hero-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Form styling */
+.form-control:focus {
+  border-color: var(--meliorism-primary);
+  box-shadow: 0 0 0 0.2rem rgba(79, 119, 127, 0.25);
+}
+
+.form-select:focus {
+  border-color: var(--meliorism-primary);
+  box-shadow: 0 0 0 0.2rem rgba(79, 119, 127, 0.25);
+}
+
+/* Motto styling */
+.text-primary.fw-bold {
+  color: var(--meliorism-primary-dark) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Section headers */
+.display-4, .display-5 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Button link styling for footer */
+.btn-link.text-light {
+  color: #e9ecef !important;
+  text-decoration: none !important;
+}
+
+.btn-link.text-light:hover {
+  color: var(--meliorism-secondary) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .navbar-brand img {
+    height: 30px !important;
+  }
+  
+  .hero-section img {
+    max-width: 250px !important;
+    max-height: 250px !important;
+  }
+}
