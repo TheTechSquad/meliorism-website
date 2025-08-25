@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/build"
-      }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "npm install",
+  "framework": null,
   "routes": [
     {
       "src": "/static/(.*)",
@@ -19,7 +14,7 @@
       "dest": "/images/$1"
     },
     {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|map))",
       "dest": "/$1"
     },
     {
