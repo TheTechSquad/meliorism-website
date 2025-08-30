@@ -6,7 +6,7 @@ function About() {
     <>
 
       {/* Team Photo - Full Width Hero */}
-      <section className="p-0" style={{ marginTop: '76px' }}>
+      <section className="p-0" style={{ marginTop: '150px' }}>
         <div className="position-relative">
           <img src="/images/foraboutus.jpg"
                alt="Meliorism Partners Foundation Team"
@@ -500,7 +500,7 @@ function About() {
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
                     <h5 className="fw-bold">MSCON Administrator</h5>
-                    <p className="text-muted">Rev. Joshua Marrion Addae-Williams</p>
+                    <p className="text-muted">Mrs. Juliiet Koudonu Seglah</p>
                   </div>
                 </Col>
                 

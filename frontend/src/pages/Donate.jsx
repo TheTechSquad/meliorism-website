@@ -1,16 +1,94 @@
-import React from 'react';
-import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 
 function Donate() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    amount: '',
+    frequency: 'one-time',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      console.log('Submitting donation:', formData);
+      const response = await fetch('/api/donate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      console.log('Response status:', response.status);
+      const data = await response.json();
+      console.log('Response data:', data);
+
+      if (response.ok) {
+        // Redirect to Paystack payment page
+        if (data.data.paymentUrl) {
+          window.location.href = data.data.paymentUrl;
+        } else {
+          setSuccess('Donation initiated successfully!');
+        }
+      } else {
+        setError(data.message || 'Error processing donation');
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setError(`Error connecting to server: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       {/* Donation header */}
-      <section className="py-5" style={{ marginTop: '76px' }}>
-        <Container>
+      <section 
+        className="py-5 position-relative" 
+        style={{ 
+          marginTop: '150px',
+          backgroundImage: 'url(/images/don1.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '500px',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
+        {/* Overlay for better text readability */}
+        <div 
+          className="position-absolute top-0 start-0 w-100 h-100" 
+          style={{ 
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 1
+          }}
+        ></div>
+        
+        <Container className="position-relative" style={{ zIndex: 2 }}>
           <Row>
             <Col lg={8} className="mx-auto text-center">
-              <h1 className="display-4 fw-bold mb-4">Make a Donation</h1>
-              <p className="lead">
+              <h1 className="display-4 fw-bold mb-4 text-white">Make a Donation</h1>
+              <p className="lead text-white">
                 Your contribution helps us continue our mission of creating positive change in communities. 
                 Every donation, no matter the size, makes a meaningful impact in transforming lives and 
                 empowering individuals to reach their full potential.
@@ -77,40 +155,74 @@ function Donate() {
               <Card className="shadow">
                 <Card.Body className="p-5">
                   <h3 className="text-center mb-4">Donation Details</h3>
-                  <Form>
+                  
+                  {error && <Alert variant="danger">{error}</Alert>}
+                  {success && <Alert variant="success">{success}</Alert>}
+                  
+                  <Form onSubmit={handleSubmit}>
                     <Row>
                       <Col md={6}>
                         <Form.Group className="mb-3">
                           <Form.Label>First Name *</Form.Label>
-                          <Form.Control type="text" placeholder="Enter your first name" required />
+                          <Form.Control 
+                            type="text" 
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            placeholder="Enter your first name" 
+                            required 
+                          />
                         </Form.Group>
                       </Col>
                       <Col md={6}>
                         <Form.Group className="mb-3">
                           <Form.Label>Last Name *</Form.Label>
-                          <Form.Control type="text" placeholder="Enter your last name" required />
+                          <Form.Control 
+                            type="text" 
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            placeholder="Enter your last name" 
+                            required 
+                          />
                         </Form.Group>
                       </Col>
                     </Row>
                     <Form.Group className="mb-3">
                       <Form.Label>Email Address *</Form.Label>
-                      <Form.Control type="email" placeholder="Enter your email" required />
+                      <Form.Control 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email" 
+                        required 
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Phone Number</Form.Label>
-                      <Form.Control type="tel" placeholder="Enter your phone number" />
+                      <Form.Control 
+                        type="tel" 
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your phone number" 
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Donation Amount *</Form.Label>
-                      <Form.Select required>
-                        <option value="">Select amount</option>
-                        <option value="25">$25 - Educational Resources</option>
-                        <option value="50">$50 - Health & Wellness</option>
-                        <option value="100">$100 - Mentorship Programs</option>
-                        <option value="250">$250 - Community Development</option>
-                        <option value="500">$500 - Program Expansion</option>
-                        <option value="custom">Custom Amount</option>
-                      </Form.Select>
+                      <Form.Control
+                        type="number"
+                        name="amount"
+                        value={formData.amount}
+                        onChange={handleChange}
+                        placeholder="Enter amount"
+                        min="10"
+                        required
+                      />
+                      <Form.Text className="text-muted">
+                        Minimum donation amount is $10
+                      </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Donation Frequency</Form.Label>
@@ -119,37 +231,54 @@ function Donate() {
                           type="radio" 
                           name="frequency" 
                           label="One-time donation" 
-                          value="one-time" 
-                          defaultChecked 
+                          value="one-time"
+                          checked={formData.frequency === 'one-time'}
+                          onChange={handleChange}
                           className="mb-2" 
                         />
                         <Form.Check 
                           type="radio" 
                           name="frequency" 
                           label="Monthly recurring" 
-                          value="monthly" 
+                          value="monthly"
+                          checked={formData.frequency === 'monthly'}
+                          onChange={handleChange}
                           className="mb-2" 
                         />
                         <Form.Check 
                           type="radio" 
                           name="frequency" 
                           label="Annual recurring" 
-                          value="annual" 
+                          value="annual"
+                          checked={formData.frequency === 'annual'}
+                          onChange={handleChange}
                           className="mb-2" 
                         />
                       </div>
                     </Form.Group>
                     <Form.Group className="mb-4">
                       <Form.Label>Message (Optional)</Form.Label>
-                      <Form.Control as="textarea" rows={3} placeholder="Leave a message or dedication..." />
+                      <Form.Control 
+                        as="textarea" 
+                        rows={3} 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Leave a message or dedication..." 
+                      />
                     </Form.Group>
                     <div className="d-grid">
-                      <Button variant="primary" size="lg" type="submit">
-                        Proceed to Payment
+                      <Button 
+                        variant="primary" 
+                        size="lg" 
+                        type="submit"
+                        disabled={loading}
+                      >
+                        {loading ? 'Processing...' : 'Proceed to Payment'}
                       </Button>
                     </div>
                     <p className="text-muted text-center mt-3 small">
-                      Your donation is secure and will be processed through our trusted payment partners.
+                      Your donation is secure and will be processed through Paystack.
                     </p>
                   </Form>
                 </Card.Body>

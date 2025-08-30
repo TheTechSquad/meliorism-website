@@ -5,7 +5,7 @@ function Programs() {
   return (
     <>
       {/* Programs overview */}
-      <section className="py-5" style={{ marginTop: '76px' }}>
+      <section className="py-5" style={{ marginTop: '150px' }}>
         <Container>
           <Row>
             <Col lg={8} className="mx-auto text-center mb-5">
