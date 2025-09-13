@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 
@@ -10,7 +10,7 @@ import About from './pages/About';
 import Programs from './pages/Programs';
 import Donate from './pages/Donate';
 import Volunteer from './pages/Volunteer';
-import Blog from './pages/Blog';
+import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
@@ -25,7 +25,8 @@ function App() {
           <Route path="/programs" element={<Programs />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<Navigate to="/projects" replace />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />

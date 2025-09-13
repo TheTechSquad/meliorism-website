@@ -76,10 +76,10 @@ function Layout({ children }) {
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
-                to="/blog" 
-                className={`nav-link-optimized ${location.pathname === '/blog' ? 'active' : ''}`}
+                to="/projects" 
+                className={`nav-link-optimized ${location.pathname === '/projects' ? 'active' : ''}`}
               >
-                Blog
+                Projects
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
@@ -223,7 +223,7 @@ function Layout({ children }) {
                   { text: 'Programs', path: '/programs' },
                   { text: 'Donate Now', path: '/donate' },
                   { text: 'Volunteer', path: '/volunteer' },
-                  { text: 'Blog', path: '/blog' },
+                  { text: 'Projects', path: '/projects' },
                   { text: 'Contact', path: '/contact' }
                 ].map((link) => (
                   <li key={link.path} style={{ marginBottom: '12px' }}>

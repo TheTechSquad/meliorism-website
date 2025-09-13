@@ -77,10 +77,16 @@ const volunteerSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
   email: { type: String, required: true },
   phone: { type: String, required: true },
-  interests: [{ type: String }],
-  availability: { type: String },
+  ageRange: { type: String },
+  location: { type: String },
+  areasOfInterest: [{ type: String }],
+  skillsExperience: { type: String },
+  availability: { type: String, required: true },
+  timeCommitment: { type: String },
+  motivation: { type: String },
   status: { type: String, default: 'pending' },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
 });
 
 const contactSchema = new mongoose.Schema({
@@ -577,10 +583,25 @@ app.get('/api/user/donations', authenticateToken, async (req, res) => {
 app.post('/api/volunteer', [
   body('fullName').notEmpty().withMessage('Full name is required'),
   body('email').isEmail().withMessage('Valid email is required'),
-  body('phone').notEmpty().withMessage('Phone number is required')
+  body('phone').notEmpty().withMessage('Phone number is required'),
+  body('availability').notEmpty().withMessage('Availability is required'),
+  body('areasOfInterest').isArray({ min: 1 }).withMessage('At least one area of interest is required')
 ], handleValidationErrors, async (req, res) => {
   try {
-    const { fullName, email, phone, interests, availability } = req.body;
+    console.log('Received volunteer application:', req.body);
+    
+    const { 
+      fullName, 
+      email, 
+      phone, 
+      ageRange, 
+      location, 
+      areasOfInterest, 
+      skillsExperience, 
+      availability, 
+      timeCommitment, 
+      motivation 
+    } = req.body;
     
     // Check if volunteer already exists
     const existingVolunteer = await Volunteer.findOne({ email });
@@ -595,11 +616,19 @@ app.post('/api/volunteer', [
       fullName,
       email,
       phone,
-      interests: Array.isArray(interests) ? interests : [],
-      availability
+      ageRange,
+      location,
+      areasOfInterest: Array.isArray(areasOfInterest) ? areasOfInterest : [],
+      skillsExperience,
+      availability,
+      timeCommitment,
+      motivation,
+      updatedAt: new Date()
     });
     
     await volunteer.save();
+    
+    console.log('Volunteer application saved successfully:', volunteer._id);
     
     res.status(201).json({
       success: true,
@@ -614,7 +643,26 @@ app.post('/api/volunteer', [
     console.error('Error registering volunteer:', error);
     res.status(500).json({
       success: false,
-      message: 'Error registering volunteer'
+      message: 'Error registering volunteer',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Route: GET /api/volunteer - get all volunteer applications (for admin/testing)
+app.get('/api/volunteer', async (req, res) => {
+  try {
+    const volunteers = await Volunteer.find().sort({ createdAt: -1 });
+    res.json({
+      success: true,
+      data: volunteers,
+      count: volunteers.length
+    });
+  } catch (error) {
+    console.error('Error fetching volunteers:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching volunteer applications'
     });
   }
 });

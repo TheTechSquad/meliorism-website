@@ -1,25 +1,42 @@
 import React from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 
-function Blog() {
+function Projects() {
   return (
     <>
-      {/* Blog header */}
-      <section className="py-5" style={{ marginTop: '120px', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
+      {/* Projects header */}
+      <section 
+        className="py-5" 
+        style={{ 
+          marginTop: '120px', 
+          minHeight: '75vh', 
+          display: 'flex', 
+          alignItems: 'center',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/vol3.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
+        }}
+      >
         <Container>
           <Row>
             <Col lg={8} className="mx-auto text-center">
               <h1 className="display-4 fw-bold mb-4" style={{
                 fontWeight: '900',
                 textTransform: 'uppercase',
-                letterSpacing: '2px'
-              }}>Latest Updates</h1>
+                letterSpacing: '2px',
+                color: 'white',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
+              }}>Our Projects</h1>
               <p className="lead" style={{
                 fontWeight: '500',
-                lineHeight: '1.6'
+                lineHeight: '1.6',
+                color: 'white',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.7)'
               }}>
-                Stay informed about our latest projects, success stories, and community impact. 
-                Discover how we're making a difference and the lives we're transforming together.
+                Explore our ongoing initiatives and completed projects that are making a difference. 
+                Discover how we're creating positive change and the communities we're transforming together.
               </p>
             </Col>
           </Row>
@@ -66,7 +83,7 @@ function Blog() {
         </Container>
       </section>
 
-      {/* Blog posts */}
+      {/* Project posts */}
       <section className="py-5">
         <Container>
           <Row>
@@ -141,12 +158,11 @@ function Blog() {
             </Col>
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
-                <div className="bg-light d-flex align-items-center justify-content-center" 
-                     style={{ height: '200px' }}>
-                  <div className="text-center">
-                    <h1 className="display-4 text-primary">🏥</h1>
-                    <h6 className="text-muted">Health Program</h6>
-                  </div>
+                <div style={{ height: '200px', overflow: 'hidden' }}>
+                  <img src="/images/prog1.jpg"
+                       alt="Health Synergy Program"
+                       className="card-img-top"
+                       style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="danger" className="mb-2">Health</Badge>
@@ -165,12 +181,11 @@ function Blog() {
             </Col>
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
-                <div className="bg-light d-flex align-items-center justify-content-center" 
-                     style={{ height: '200px' }}>
-                  <div className="text-center">
-                    <h1 className="display-4 text-primary">🤝</h1>
-                    <h6 className="text-muted">Partnership</h6>
-                  </div>
+                <div style={{ height: '200px', overflow: 'hidden' }}>
+                  <img src="/images/vol1.jpg"
+                       alt="Community Partnership"
+                       className="card-img-top"
+                       style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="secondary" className="mb-2">Partnership</Badge>
@@ -186,16 +201,15 @@ function Blog() {
             </Col>
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
-                <div className="bg-light d-flex align-items-center justify-content-center" 
-                     style={{ height: '200px' }}>
-                  <div className="text-center">
-                    <h1 className="display-4 text-primary">🎯</h1>
-                    <h6 className="text-muted">Impact Report</h6>
-                  </div>
+                <div style={{ height: '200px', overflow: 'hidden' }}>
+                  <img src="/images/prog2.jpg"
+                       alt="2024 Impact Report"
+                       className="card-img-top"
+                       style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="primary" className="mb-2">Impact</Badge>
-                  <Card.Title>2024 Impact Report Released</Card.Title>
+                  <Card.Title>2025 Impact Report Released</Card.Title>
                   <Card.Text>
                     Our annual impact report showcases the incredible progress we've 
                     made together, highlighting key achievements and the lives we've 
@@ -239,4 +253,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default Projects;

@@ -44,10 +44,10 @@ function Volunteer() {
     
     // Basic validation
     if (!formData.fullName || !formData.phone || !formData.email || !formData.availability) {
-    setAlertMessage('Please fill in all required fields.');
-    setAlertVariant('danger');
-    setShowAlert(true);
-    return;
+      setAlertMessage('Please fill in all required fields.');
+      setAlertVariant('danger');
+      setShowAlert(true);
+      return;
     }
     
     if (formData.areasOfInterest.length === 0) {
@@ -58,31 +58,45 @@ function Volunteer() {
     }
 
     try {
-      // For now, just show success message
-      // In a real app, you would send data to backend
-      
-      setAlertMessage('Thank you for your volunteer application! We will review it and get back to you within 5-7 business days.');
-      setAlertVariant('success');
-      setShowAlert(true);
-      
-      // Reset form
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        ageRange: '',
-        location: '',
-        areasOfInterest: [],
-        skillsExperience: '',
-        availability: '',
-        timeCommitment: '',
-        motivation: ''
+      const response = await fetch('/api/volunteer', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      
-      // Scroll to top to show success message
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setAlertMessage('Thank you for your volunteer application! We will review it and get back to you within 5-7 business days.');
+        setAlertVariant('success');
+        setShowAlert(true);
+        
+        // Reset form
+        setFormData({
+          fullName: '',
+          phone: '',
+          email: '',
+          ageRange: '',
+          location: '',
+          areasOfInterest: [],
+          skillsExperience: '',
+          availability: '',
+          timeCommitment: '',
+          motivation: ''
+        });
+        
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setAlertMessage(result.message || 'There was an error submitting your application. Please try again.');
+        setAlertVariant('danger');
+        setShowAlert(true);
+      }
       
     } catch (error) {
+      console.error('Error submitting volunteer application:', error);
       setAlertMessage('There was an error submitting your application. Please try again.');
       setAlertVariant('danger');
       setShowAlert(true);
