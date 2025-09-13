@@ -5,12 +5,41 @@ function Contact() {
   return (
     <>
       {/* Contact header */}
-      <section className="py-5" style={{ marginTop: '150px' }}>
-        <Container>
+      <section className="py-5" style={{ 
+        marginTop: '120px', 
+        minHeight: '75vh', 
+        display: 'flex', 
+        alignItems: 'center',
+        backgroundImage: 'url(/images/vol2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative'
+      }}>
+        {/* Dark overlay for better text readability */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 1
+        }}></div>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <Row>
             <Col lg={8} className="mx-auto text-center">
-              <h1 className="display-4 fw-bold mb-4">Get In Touch</h1>
-              <p className="lead">
+              <h1 className="display-4 fw-bold mb-4" style={{
+                fontWeight: '900',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                color: 'white'
+              }}>Get In Touch</h1>
+              <p className="lead" style={{
+                fontWeight: '500',
+                lineHeight: '1.6',
+                color: 'white'
+              }}>
                 Have questions or want to learn more about our work? We'd love to hear from you. 
                 Reach out to us through any of the channels below or send us a message using the form.
               </p>
@@ -20,11 +49,41 @@ function Contact() {
       </section>
 
       {/* Contact information */}
-      <section className="py-5" style={{ background: '#F4F2F5' }}>
-        <Container>
+      <section className="py-5" style={{ 
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Background image */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'url(/images/backg2.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          zIndex: 0
+        }}></div>
+        {/* Light overlay for better readability */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(244, 242, 245, 0.3)',
+          zIndex: 1
+        }}></div>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <Row>
             <Col lg={10} className="mx-auto">
-              <h2 className="display-5 fw-bold text-center mb-5">Contact Information</h2>
+              <h2 className="display-5 fw-bold text-center mb-5" style={{
+                fontWeight: '800',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+              }}>Contact Information</h2>
               <Row>
                 <Col md={6} lg={3} className="mb-4">
                   <Card className="text-center border-0 shadow-sm h-100">
@@ -99,11 +158,38 @@ function Contact() {
       </section>
 
       {/* Contact form */}
-      <section className="py-5">
-        <Container>
+      <section className="py-5" style={{
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Blurred background image */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'url(/images/cont2.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(2px)',
+          zIndex: 0
+        }}></div>
+        {/* Dark overlay for better form readability */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          zIndex: 1
+        }}></div>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <Row>
             <Col lg={8} className="mx-auto">
-              <Card className="shadow">
+              <Card className="shadow" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
                 <Card.Body className="p-5">
                   <h3 className="text-center mb-4">Send Us a Message</h3>
                   <Form>
@@ -175,8 +261,34 @@ function Contact() {
       </section>
 
       {/* FAQ section */}
-      <section className="py-5" style={{ background: '#F4F2F5' }}>
-        <Container>
+      <section className="py-5" style={{ 
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Background image */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'url(/images/backg2.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          zIndex: 0
+        }}></div>
+        {/* Light overlay for better readability */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(244, 242, 245, 0.3)',
+          zIndex: 1
+        }}></div>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <Row>
             <Col lg={8} className="mx-auto">
               <h2 className="display-5 fw-bold text-center mb-5">Frequently Asked Questions</h2>

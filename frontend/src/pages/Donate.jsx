@@ -65,12 +65,12 @@ function Donate() {
       <section 
         className="py-5 position-relative" 
         style={{ 
-          marginTop: '150px',
-          backgroundImage: 'url(/images/don1.jpg)',
+          marginTop: '120px',
+          backgroundImage: 'url(/images/don2.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: '60% 40%',
           backgroundRepeat: 'no-repeat',
-          minHeight: '500px',
+          minHeight: '75vh',
           display: 'flex',
           alignItems: 'center'
         }}
@@ -86,9 +86,22 @@ function Donate() {
         
         <Container className="position-relative" style={{ zIndex: 2 }}>
           <Row>
-            <Col lg={8} className="mx-auto text-center">
-              <h1 className="display-4 fw-bold mb-4 text-white">Make a Donation</h1>
-              <p className="lead text-white">
+            <Col lg={10} className="mx-auto text-center">
+              <h1 className="display-3 fw-bold mb-4 text-white" style={{
+                fontWeight: '900',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                textShadow: '4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6)',
+                fontSize: 'clamp(2.5rem, 6vw, 4.5rem)'
+              }}>Make a Donation</h1>
+              <p className="text-white" style={{
+                fontWeight: '500',
+                lineHeight: '1.7',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
+                maxWidth: '800px',
+                margin: '0 auto'
+              }}>
                 Your contribution helps us continue our mission of creating positive change in communities. 
                 Every donation, no matter the size, makes a meaningful impact in transforming lives and 
                 empowering individuals to reach their full potential.
@@ -148,11 +161,29 @@ function Donate() {
       </section>
 
       {/* Donation form */}
-      <section className="py-5">
-        <Container>
+      <section 
+        className="py-5 position-relative" 
+        style={{
+          backgroundImage: 'url(/images/don4.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh'
+        }}
+      >
+        {/* Overlay for better form readability */}
+        <div 
+          className="position-absolute top-0 start-0 w-100 h-100" 
+          style={{ 
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            zIndex: 1
+          }}
+        ></div>
+        
+        <Container className="position-relative" style={{ zIndex: 2 }}>
           <Row>
             <Col lg={8} className="mx-auto">
-              <Card className="shadow">
+              <Card className="shadow border-0" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }}>
                 <Card.Body className="p-5">
                   <h3 className="text-center mb-4">Donation Details</h3>
                   
@@ -298,7 +329,7 @@ function Donate() {
                 <Col md={6} className="mb-4">
                   <Card className="border-0 shadow-sm h-100">
                     <Card.Body>
-                      <h5 className="text-primary mb-3">🏦 Bank Transfer</h5>
+                      <h5 className="text-primary mb-3">Bank Transfer</h5>
                       <p>
                         Make a direct bank transfer to our foundation account. 
                         Contact us for banking details and transfer instructions.
@@ -310,7 +341,7 @@ function Donate() {
                 <Col md={6} className="mb-4">
                   <Card className="border-0 shadow-sm h-100">
                     <Card.Body>
-                      <h5 className="text-primary mb-3">📱 Mobile Money</h5>
+                      <h5 className="text-primary mb-3">Mobile Money</h5>
                       <p>
                         Donate using mobile money services. We accept various mobile payment 
                         platforms for your convenience.
@@ -322,7 +353,7 @@ function Donate() {
                 <Col md={6} className="mb-4">
                   <Card className="border-0 shadow-sm h-100">
                     <Card.Body>
-                      <h5 className="text-primary mb-3">🎁 In-Kind Donations</h5>
+                      <h5 className="text-primary mb-3">In-Kind Donations</h5>
                       <p>
                         Donate goods, services, or equipment that can support our programs 
                         and community initiatives.
@@ -334,7 +365,7 @@ function Donate() {
                 <Col md={6} className="mb-4">
                   <Card className="border-0 shadow-sm h-100">
                     <Card.Body>
-                      <h5 className="text-primary mb-3">🏢 Corporate Partnerships</h5>
+                      <h5 className="text-primary mb-3">Corporate Partnerships</h5>
                       <p>
                         Partner with us as a corporate sponsor to make a larger impact 
                         in community development and social change.

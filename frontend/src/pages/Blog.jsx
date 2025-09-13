@@ -5,12 +5,19 @@ function Blog() {
   return (
     <>
       {/* Blog header */}
-      <section className="py-5" style={{ marginTop: '150px' }}>
+      <section className="py-5" style={{ marginTop: '120px', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
         <Container>
           <Row>
             <Col lg={8} className="mx-auto text-center">
-              <h1 className="display-4 fw-bold mb-4">Latest Updates</h1>
-              <p className="lead">
+              <h1 className="display-4 fw-bold mb-4" style={{
+                fontWeight: '900',
+                textTransform: 'uppercase',
+                letterSpacing: '2px'
+              }}>Latest Updates</h1>
+              <p className="lead" style={{
+                fontWeight: '500',
+                lineHeight: '1.6'
+              }}>
                 Stay informed about our latest projects, success stories, and community impact. 
                 Discover how we're making a difference and the lives we're transforming together.
               </p>
@@ -28,7 +35,7 @@ function Blog() {
                 <Row className="g-0">
                   <Col md={6}>
                     <div style={{ height: '300px', overflow: 'hidden' }}>
-                      <img src="/images/bill-wegener-hs98_9hzTcU-unsplash.jpg"
+                      <img src="/images/edu1.jpg"
                            alt="MSCON Program Launch - Women empowerment"
                            style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
@@ -36,8 +43,14 @@ function Blog() {
                   <Col md={6}>
                     <Card.Body className="p-4">
                       <Badge bg="primary" className="mb-2">Featured</Badge>
-                      <h3 className="mb-3">Meliorism She Connects Program Successfully Launches</h3>
-                      <p className="text-muted mb-3">
+                      <h3 className="mb-3" style={{
+                        fontWeight: '800',
+                        letterSpacing: '1px'
+                      }}>Meliorism She Connects Program Successfully Launches</h3>
+                      <p className="text-muted mb-3" style={{
+                        lineHeight: '1.6',
+                        fontWeight: '500'
+                      }}>
                         We're thrilled to announce the successful launch of our Meliorism She Connects (MSCON)
                         program, which has already begun transforming the lives of over 200 women in our community.
                         This comprehensive support program provides mentorship, health education, and life skills
@@ -60,14 +73,17 @@ function Blog() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/stormseeker-rX12B5uX7QM-unsplash.jpg"
+                  <img src="/images/help.jpg"
                        alt="Community garden and sustainable living"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="success" className="mb-2">Community</Badge>
-                  <Card.Title>New Community Garden Opens</Card.Title>
+                  <Card.Title style={{
+                    fontWeight: '800',
+                    letterSpacing: '1px'
+                  }}>New Community Garden Opens</Card.Title>
                   <Card.Text>
                     We're excited to announce the opening of our third community garden,
                     providing fresh produce to 200+ families and creating a sustainable
@@ -80,14 +96,17 @@ function Blog() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/khalil-radi-e1GHAnjzGgI-unsplash.jpg"
+                  <img src="/images/feed1.jpg"
                        alt="Education and scholarship recipients"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="info" className="mb-2">Education</Badge>
-                  <Card.Title>Scholarship Recipients Announced</Card.Title>
+                  <Card.Title style={{
+                    fontWeight: '800',
+                    letterSpacing: '1px'
+                  }}>Scholarship Recipients Announced</Card.Title>
                   <Card.Text>
                     Congratulations to our 15 new scholarship recipients who will be
                     pursuing higher education this fall. These bright minds represent
@@ -100,14 +119,17 @@ function Blog() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/haziq-farooqi-SaWB3uFEEQA-unsplash.jpg"
+                  <img src="/images/don3.jpg"
                        alt="Digital literacy and skills workshop"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover' }} />
                 </div>
                 <Card.Body>
                   <Badge bg="warning" className="mb-2">Skills</Badge>
-                  <Card.Title>Digital Literacy Workshop Success</Card.Title>
+                  <Card.Title style={{
+                    fontWeight: '800',
+                    letterSpacing: '1px'
+                  }}>Digital Literacy Workshop Success</Card.Title>
                   <Card.Text>
                     Our recent digital literacy workshop helped 50+ community members
                     develop essential computer skills, opening new opportunities for
@@ -128,7 +150,10 @@ function Blog() {
                 </div>
                 <Card.Body>
                   <Badge bg="danger" className="mb-2">Health</Badge>
-                  <Card.Title>Health Synergy Program Expansion</Card.Title>
+                  <Card.Title style={{
+                    fontWeight: '800',
+                    letterSpacing: '1px'
+                  }}>Health Synergy Program Expansion</Card.Title>
                   <Card.Text>
                     We're expanding our Meliorism Health Synergy program to reach 
                     more communities, providing comprehensive health education and 

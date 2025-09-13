@@ -19,7 +19,7 @@ function Home() {
           rgba(79, 119, 127, 0.85) 50%,
           rgba(23, 87, 96, 0.9) 100%
         ),
-        url('/images/helping-hands-volunteer-support-community-service-graphic.jpg')`,
+        url('/images/vol1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -64,7 +64,8 @@ function Home() {
                   lineHeight: '1.2',
                   marginBottom: '1.5rem',
                   textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-                  letterSpacing: '-0.5px'
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase'
                 }}>
                   BELIEVE IN THE <br/>
                   <span style={{ 
@@ -81,7 +82,7 @@ function Home() {
                   fontSize: '1.25rem',
                   color: '#2c5963',
                   marginBottom: '2rem',
-                  lineHeight: '1.7',
+                  lineHeight: '1.6',
                   maxWidth: '580px',
                   fontWeight: '500'
                 }}>
@@ -105,7 +106,7 @@ function Home() {
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px'
                   }}>
-                    🌟 Engage, Don't Rage - Discover Our Impact Programs
+                    Engage, Don't Rage - Discover Our Impact Programs
                   </p>
                 </div>
                 <div className="d-flex gap-3 flex-wrap">
@@ -114,13 +115,14 @@ function Home() {
                     as={Link} 
                     to="/donate"
                     style={{
-                      backgroundColor: '#4F777F',
+                      backgroundColor: '#C8D633',
                       border: 'none',
+                      color: '#1F5F3F',
                       borderRadius: '50px',
                       padding: '15px 35px',
                       fontSize: '1.1rem',
                       fontWeight: '700',
-                      boxShadow: '0 8px 25px rgba(79, 119, 127, 0.4)',
+                      boxShadow: '0 8px 25px rgba(200, 214, 51, 0.4)',
                       transition: 'all 0.3s ease',
                       textTransform: 'uppercase',
                       letterSpacing: '1px',
@@ -129,15 +131,17 @@ function Home() {
                       gap: '8px'
                     }}
                     onMouseOver={(e) => {
+                      e.target.style.backgroundColor = '#B5C42E';
                       e.target.style.transform = 'translateY(-3px)';
-                      e.target.style.boxShadow = '0 12px 35px rgba(79, 119, 127, 0.5)';
+                      e.target.style.boxShadow = '0 12px 35px rgba(200, 214, 51, 0.5)';
                     }}
                     onMouseOut={(e) => {
+                      e.target.style.backgroundColor = '#C8D633';
                       e.target.style.transform = 'translateY(0)';
-                      e.target.style.boxShadow = '0 8px 25px rgba(79, 119, 127, 0.4)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(200, 214, 51, 0.4)';
                     }}
                   >
-                    💖 Donate Now
+                    DONATE NOW
                   </Button>
                   <Button 
                     variant="outline-dark" 
@@ -170,7 +174,7 @@ function Home() {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    🤝 Get Involved
+                    Get Involved
                   </Button>
                 </div>
               </div>
@@ -200,7 +204,7 @@ function Home() {
                 }}></div>
                 
                 <img 
-                  src="/images/medium-shot-smiley-kids-posing-together.jpg" 
+                  src="/images/home1.jpg" 
                   alt="Happy children - representing hope, joy and transformation through education"
                   style={{
                     width: '100%',
@@ -314,7 +318,7 @@ function Home() {
           rgba(255, 255, 255, 0.95) 0%,
           rgba(244, 242, 245, 0.9) 100%
         ),
-        url('/images/bill-wegener-hs98_9hzTcU-unsplash.jpg')`,
+        url('/images/edu1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -434,7 +438,7 @@ function Home() {
             </Col>
             <Col lg={6}>
               <img 
-                src="/images/emmanuel-ikwuegbu-M-4lFg1Xfag-unsplash.jpg"
+                src="/images/mscon.jpg"
                 alt="Young people engaged in learning and development activities"
                 style={{
                   width: '100%',
@@ -474,7 +478,7 @@ function Home() {
                   e.target.style.boxShadow = '0 8px 25px rgba(79, 119, 127, 0.3)';
                 }}
               >
-                📊 Discover Our Full Impact & Communities
+                Discover Our Full Impact & Communities
               </Button>
             </Col>
           </Row>
@@ -485,7 +489,7 @@ function Home() {
       <section style={{
         padding: '80px 0',
         background: `linear-gradient(135deg, rgba(23, 87, 96, 0.95) 0%, rgba(79, 119, 127, 0.9) 100%),
-        url('/images/annie-spratt-OIuCXxx08yg-unsplash.jpg')`,
+        url('/images/edu2.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -543,7 +547,7 @@ function Home() {
             </Col>
             <Col lg={6}>
               <img
-                src="/images/don1.jpg"
+                src="/images/edu2.jpg"
                 alt="Dr. Akosua Mensah - Community Development Specialist"
                 style={{
                   width: '100%',
@@ -568,7 +572,7 @@ function Home() {
           rgba(79, 119, 127, 0.9) 50%,
           rgba(23, 87, 96, 0.95) 100%
         ),
-        url('/images/stormseeker-rX12B5uX7QM-unsplash.jpg')`,
+        url('/images/help.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -729,7 +733,7 @@ function Home() {
               }}
               >
                 <img
-                  src="/images/african-children-enjoying-life.jpg"
+                  src="/images/edu1.jpg"
                   alt="African children enjoying life and learning"
                   style={{
                     width: '100%',
@@ -772,7 +776,7 @@ function Home() {
               }}
               >
                 <img
-                  src="/images/khalil-radi-e1GHAnjzGgI-unsplash.jpg"
+                  src="/images/feed1.jpg"
                   alt="Community development and empowerment"
                   style={{
                     width: '100%',
@@ -815,7 +819,7 @@ function Home() {
               }}
               >
                 <img
-                  src="/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg"
+                  src="/images/vol3.jpg"
                   alt="Hands working together for positive change"
                   style={{
                     width: '100%',
@@ -846,7 +850,7 @@ function Home() {
       <section style={{
         padding: '80px 0',
         background: `linear-gradient(135deg, rgba(23, 87, 96, 0.95) 0%, rgba(79, 119, 127, 0.9) 100%),
-        url('/images/haziq-farooqi-SaWB3uFEEQA-unsplash.jpg')`,
+        url('/images/don3.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -968,7 +972,7 @@ function Home() {
             </Col>
             <Col lg={6}>
               <img
-                src="/images/michael-ali-JswtleKTsFY-unsplash.jpg"
+                src="/images/feed2.jpg"
                 alt="Inspiring individuals working together for community development"
                 style={{
                   width: '100%',
@@ -1295,7 +1299,7 @@ function Home() {
       <section style={{
         padding: '80px 0',
         background: `linear-gradient(135deg, rgba(244, 242, 245, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%),
-        url('/images/gerard-griffay--wo6QjS9JPU-unsplash.jpg')`,
+        url('/images/happy2.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -1377,14 +1381,27 @@ function Home() {
                   to="/donate"
                   size="sm"
                   style={{
-                    backgroundColor: '#4F777F',
+                    backgroundColor: '#C8D633',
                     border: 'none',
+                    color: '#1F5F3F',
                     borderRadius: '20px',
                     padding: '8px 20px',
-                    fontWeight: '600'
+                    fontWeight: '600',
+                    transition: 'all 0.3s ease',
+                    textTransform: 'uppercase',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.5px'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#B5C42E';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = '#C8D633';
+                    e.target.style.transform = 'translateY(0)';
                   }}
                 >
-                  Donate Now
+                  DONATE NOW
                 </Button>
               </div>
             </Col>
@@ -1628,14 +1645,14 @@ function Home() {
                   as={Link} 
                   to="/donate"
                   style={{
-                    backgroundColor: '#DDD6DD',
+                    backgroundColor: '#C8D633',
                     border: 'none',
-                    color: '#175760',
+                    color: '#1F5F3F',
                     borderRadius: '50px',
                     padding: '18px 40px',
                     fontSize: '1.2rem',
                     fontWeight: '700',
-                    boxShadow: '0 8px 25px rgba(221, 214, 221, 0.4)',
+                    boxShadow: '0 8px 25px rgba(200, 214, 51, 0.4)',
                     transition: 'all 0.3s ease',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -1644,15 +1661,17 @@ function Home() {
                     gap: '10px'
                   }}
                   onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#B5C42E';
                     e.target.style.transform = 'translateY(-3px)';
-                    e.target.style.boxShadow = '0 12px 35px rgba(221, 214, 221, 0.5)';
+                    e.target.style.boxShadow = '0 12px 35px rgba(200, 214, 51, 0.5)';
                   }}
                   onMouseOut={(e) => {
+                    e.target.style.backgroundColor = '#C8D633';
                     e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 8px 25px rgba(221, 214, 221, 0.4)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(200, 214, 51, 0.4)';
                   }}
                 >
-                  💝 Support Our Cause
+                  SUPPORT OUR CAUSE
                 </Button>
                 <Button 
                   variant="outline-light" 
@@ -1683,7 +1702,7 @@ function Home() {
                     e.target.style.transform = 'translateY(0)';
                   }}
                 >
-                  📖 Learn Our Story
+                  Learn Our Story
                 </Button>
               </div>
             </Col>

@@ -12,85 +12,88 @@ function Layout({ children }) {
         padding: '10px 0'
       }}>
         <Container>
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img src="/logo1.png" alt="Meliorism Partners Foundation Logo" height="120" style={{
-              transition: 'transform 0.3s ease',
-              border: 'none',
-              outline: 'none',
-              boxShadow: 'none',
-              borderRadius: '0',
-              padding: '0',
-              margin: '0'
-            }} />
+          <Navbar.Brand as={Link} to="/" className="navbar-brand-optimized">
+            <img 
+              src="/logo1.png" 
+              alt="Meliorism Partners Foundation Logo" 
+              height="60"
+              className="navbar-logo"
+              loading="eager"
+              style={{
+                transform: 'translate3d(0,0,0)',
+                backfaceVisibility: 'hidden',
+                imageRendering: 'optimizeSpeed'
+              }}
+            />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle 
+            aria-controls="basic-navbar-nav" 
+            className="navbar-toggler-optimized"
+            style={{
+              border: 'none',
+              padding: '4px 8px',
+              backgroundColor: 'transparent',
+              transform: 'translate3d(0,0,0)',
+              backfaceVisibility: 'hidden'
+            }}
+          />
+          <Navbar.Collapse 
+            id="basic-navbar-nav"
+            style={{
+              transform: 'translate3d(0,0,0)',
+              backfaceVisibility: 'hidden',
+              contain: 'layout style paint'
+            }}
+          >
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/" className={location.pathname === '/' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                className={`nav-link-optimized ${location.pathname === '/' ? 'active' : ''}`}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/about" className={location.pathname === '/about' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/about' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/about" 
+                className={`nav-link-optimized ${location.pathname === '/about' ? 'active' : ''}`}
+              >
                 About Us
               </Nav.Link>
-              <Nav.Link as={Link} to="/programs" className={location.pathname === '/programs' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/programs' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/programs" 
+                className={`nav-link-optimized ${location.pathname === '/programs' ? 'active' : ''}`}
+              >
                 Programs
               </Nav.Link>
-              <Nav.Link as={Link} to="/donate" className={location.pathname === '/donate' ? 'active' : ''} style={{
-                fontWeight: '600',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease',
-                backgroundColor: location.pathname === '/donate' ? '#4F777F' : 'transparent',
-                color: location.pathname === '/donate' ? 'white' : '#4F777F',
-                borderRadius: '25px',
-                padding: '8px 20px'
-              }}>
-                Donate
-              </Nav.Link>
-              <Nav.Link as={Link} to="/volunteer" className={location.pathname === '/volunteer' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/volunteer' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/volunteer" 
+                className={`nav-link-optimized ${location.pathname === '/volunteer' ? 'active' : ''}`}
+              >
                 Volunteer
               </Nav.Link>
-              <Nav.Link as={Link} to="/blog" className={location.pathname === '/blog' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/blog' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/blog" 
+                className={`nav-link-optimized ${location.pathname === '/blog' ? 'active' : ''}`}
+              >
                 Blog
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact" className={location.pathname === '/contact' ? 'active' : ''} style={{
-                fontWeight: '600',
-                color: location.pathname === '/contact' ? '#175760' : '#4F777F',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'all 0.3s ease'
-              }}>
+              <Nav.Link 
+                as={Link} 
+                to="/contact" 
+                className={`nav-link-optimized ${location.pathname === '/contact' ? 'active' : ''}`}
+              >
                 Contact
+              </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/donate" 
+                className={`nav-donate-btn ${location.pathname === '/donate' ? 'active' : ''}`}
+              >
+                DONATE NOW
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -218,7 +221,7 @@ function Layout({ children }) {
                 {[
                   { text: 'About Us', path: '/about' },
                   { text: 'Programs', path: '/programs' },
-                  { text: 'Donate', path: '/donate' },
+                  { text: 'Donate Now', path: '/donate' },
                   { text: 'Volunteer', path: '/volunteer' },
                   { text: 'Blog', path: '/blog' },
                   { text: 'Contact', path: '/contact' }

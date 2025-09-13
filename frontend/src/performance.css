@@ -1,0 +1,93 @@
+/* Ultra-High Performance CSS for Critical Interactions */
+
+/* Critical navbar optimizations to eliminate presentation delay */
+.navbar {
+  contain: layout style paint;
+  will-change: auto;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  isolation: isolate;
+}
+
+.navbar-toggler {
+  contain: strict;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: transform 0.05s linear !important;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+.navbar-toggler:hover {
+  transform: scale3d(1.02, 1.02, 1) translate3d(0, 0, 0);
+}
+
+.navbar-toggler:active {
+  transform: scale3d(0.98, 0.98, 1) translate3d(0, 0, 0);
+  transition: none !important;
+}
+
+.navbar-toggler-icon {
+  contain: strict;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0.05s linear !important;
+}
+
+/* Force immediate compositing for collapse */
+.navbar-collapse {
+  contain: layout style paint;
+  will-change: height, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.navbar-collapse.collapsing {
+  transition: height 0.08s linear !important;
+  contain: strict;
+  will-change: height;
+}
+
+.navbar-collapse.show {
+  contain: layout style paint;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Critical brand optimizations */
+.navbar-brand {
+  contain: layout style paint;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: auto;
+}
+
+.navbar-brand img {
+  contain: strict;
+  image-rendering: optimizeSpeed;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: auto;
+}
+
+/* Remove all focus outlines for better performance */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Disable unnecessary animations during interactions */
+@media (prefers-reduced-motion: no-preference) {
+  .navbar-toggler {
+    animation: none !important;
+  }
+}
+
+/* Force GPU compositing for all nav elements */
+.navbar-nav .nav-link {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: auto;
+}

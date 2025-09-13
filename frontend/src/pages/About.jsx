@@ -6,13 +6,13 @@ function About() {
     <>
 
       {/* Team Photo - Full Width Hero */}
-      <section className="p-0" style={{ marginTop: '150px' }}>
+      <section className="p-0" style={{ marginTop: '120px' }}>
         <div className="position-relative">
           <img src="/images/foraboutus.jpg"
                alt="Meliorism Partners Foundation Team"
                className="w-100"
                style={{
-                 height: '70vh',
+                 height: '75vh',
                  minHeight: '500px',
                  objectFit: 'cover',
                  objectPosition: 'center'
@@ -25,12 +25,34 @@ function About() {
                  justifyContent: 'center'
                }}>
             <div className="text-center text-white">
-              <h1 className="display-3 fw-bold mb-4" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.8)' }}>
+              <h1 
+                className="fw-bold mb-4" 
+                style={{ 
+                  fontSize: 'clamp(2rem, 6vw, 4rem)',
+                  textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5)',
+                  letterSpacing: '1.5px',
+                  fontWeight: '900',
+                  textTransform: 'uppercase'
+                }}
+              >
                 About Meliorism Partners Foundation
               </h1>
-              <p className="lead fs-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)', maxWidth: '800px' }}>
-                Empowering minds, transforming lives through education and community development
-              </p>
+              <div className="d-flex justify-content-center">
+                <p 
+                  className="fs-5" 
+                  style={{ 
+                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)', 
+                    maxWidth: '700px',
+                    fontSize: '1.2rem',
+                    fontWeight: '500',
+                    lineHeight: '1.6',
+                    textAlign: 'center',
+                    margin: '0 auto'
+                  }}
+                >
+                  Empowering minds, transforming lives through education and community development
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -41,10 +63,13 @@ function About() {
           <Row>
             <Col lg={8} className="mx-auto text-center">
               <h2 style={{
-                fontSize: '2.5rem',
-                fontWeight: '800',
+                fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
+                fontWeight: '900',
                 color: '#175760',
-                marginBottom: '2rem'
+                marginBottom: '2rem',
+                textTransform: 'uppercase',
+                letterSpacing: '1.5px',
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)'
               }}>
                 Our Foundation Story
               </h2>
@@ -74,10 +99,13 @@ function About() {
           <Row>
             <Col lg={10} className="mx-auto">
               <h2 style={{
-                fontSize: '3rem',
-                fontWeight: '800',
+                fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                fontWeight: '900',
                 textAlign: 'center',
-                marginBottom: '3rem'
+                marginBottom: '3rem',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                textShadow: '2px 2px 4px rgba(255, 255, 255, 0.3)'
               }}>
                 Our Mission
               </h2>
@@ -103,7 +131,13 @@ function About() {
                     }}>
                       <span style={{ fontSize: '1.5rem' }}>🎓</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.3rem'
+                    }}>
                       Empowering Through Education
                     </h4>
                     <p style={{ opacity: 0.9, lineHeight: '1.6' }}>
@@ -133,7 +167,13 @@ function About() {
                     }}>
                       <span style={{ fontSize: '1.5rem' }}>💪</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.3rem'
+                    }}>
                       Holistic Life Transformation
                     </h4>
                     <p style={{ opacity: 0.9, lineHeight: '1.6' }}>
@@ -163,7 +203,13 @@ function About() {
                     }}>
                       <span style={{ fontSize: '1.5rem' }}>🌍</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.3rem'
+                    }}>
                       Community Development
                     </h4>
                     <p style={{ opacity: 0.9, lineHeight: '1.6' }}>
@@ -184,11 +230,14 @@ function About() {
           <Row>
             <Col lg={10} className="mx-auto">
               <h2 style={{
-                fontSize: '3rem',
-                fontWeight: '800',
+                fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
+                fontWeight: '900',
                 textAlign: 'center',
                 color: '#175760',
-                marginBottom: '1.5rem'
+                marginBottom: '1.5rem',
+                textTransform: 'uppercase',
+                letterSpacing: '1.5px',
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)'
               }}>
                 Our Core Values
               </h2>
@@ -228,7 +277,14 @@ function About() {
                     }}>
                       <span style={{ fontSize: '2rem' }}>👂</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', color: '#175760', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      color: '#175760', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.2rem'
+                    }}>
                       Listen, Understand & Respond
                     </h4>
                     <p style={{ color: '#4F777F', lineHeight: '1.6' }}>
@@ -260,7 +316,14 @@ function About() {
                     }}>
                       <span style={{ fontSize: '2rem' }}>🛡️</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', color: '#175760', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      color: '#175760', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.2rem'
+                    }}>
                       Integrity
                     </h4>
                     <p style={{ color: '#4F777F', lineHeight: '1.6' }}>
@@ -292,7 +355,14 @@ function About() {
                     }}>
                       <span style={{ fontSize: '2rem' }}>🤝</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', color: '#175760', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      color: '#175760', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.2rem'
+                    }}>
                       Collaboration
                     </h4>
                     <p style={{ color: '#4F777F', lineHeight: '1.6' }}>
@@ -324,7 +394,14 @@ function About() {
                     }}>
                       <span style={{ fontSize: '2rem' }}>💥</span>
                     </div>
-                    <h4 style={{ fontWeight: '700', color: '#175760', marginBottom: '1rem' }}>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      color: '#175760', 
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontSize: '1.2rem'
+                    }}>
                       Impact
                     </h4>
                     <p style={{ color: '#4F777F', lineHeight: '1.6' }}>
@@ -341,8 +418,11 @@ function About() {
                     padding: '1rem 2rem',
                     display: 'inline-block',
                     color: 'white',
-                    fontWeight: '700',
-                    fontSize: '1.1rem'
+                    fontWeight: '800',
+                    fontSize: '1.2rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
                     Our Motto: "Engage, Don't Rage"
                   </div>
@@ -364,17 +444,22 @@ function About() {
           <Row>
             <Col lg={8} className="mx-auto text-center">
               <h2 style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                marginBottom: '1.5rem'
+                fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                fontWeight: '900',
+                marginBottom: '1.5rem',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                textShadow: '2px 2px 4px rgba(255, 255, 255, 0.3)'
               }}>
                 Our Vision
               </h2>
               <h3 style={{
-                fontSize: '2rem',
-                fontWeight: '600',
+                fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+                fontWeight: '700',
                 color: '#DDD6DD',
-                marginBottom: '2rem'
+                marginBottom: '2rem',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
               }}>
                 Empowering Minds, Transforming Lives
               </h3>
@@ -402,7 +487,18 @@ function About() {
         <Container>
           <Row>
             <Col lg={10} className="mx-auto">
-              <h2 className="display-5 fw-bold text-center mb-5">Meet Our Team</h2>
+              <h2 
+                className="fw-bold text-center mb-5" 
+                style={{
+                  fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
+                  fontWeight: '900',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1.5px',
+                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)'
+                }}
+              >
+                Meet Our Team
+              </h2>
               <p className="lead text-center mb-5">
                 Our dedicated team of professionals works tirelessly to make our mission a reality.
                 Each member brings unique expertise and passion to drive positive change in our communities.
@@ -415,7 +511,17 @@ function About() {
                          alt="CEO & Founder"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">CEO & Founder</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      CEO & Founder
+                    </h5>
                     <p className="text-muted">Israel Lambert Hodzi</p>
                   </div>
                 </Col>
@@ -425,7 +531,17 @@ function About() {
                          alt="Administrator"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Administrator</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Administrator
+                    </h5>
                     <p className="text-muted">Rev. Joshua Marrion Addae-Williams</p>
                   </div>
                 </Col>
@@ -435,7 +551,17 @@ function About() {
                          alt="General Secretary"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">General Secretary</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      General Secretary
+                    </h5>
                     <p className="text-muted">Ms. Stephanie Mensah</p>
                   </div>
                 </Col>
@@ -447,7 +573,17 @@ function About() {
                          alt="Programs Director"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Programs Director</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Programs Director
+                    </h5>
                     <p className="text-muted">Emmanuel Adjei</p>
                   </div>
                 </Col>
@@ -457,7 +593,17 @@ function About() {
                          alt="Campus Director"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Campus Director</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Campus Director
+                    </h5>
                     <p className="text-muted">Mr. Ransford Amoako</p>
                   </div>
                 </Col>
@@ -467,7 +613,17 @@ function About() {
                          alt="Financial Controller"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Financial Controller</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Financial Controller
+                    </h5>
                     <p className="text-muted">Jennifer Naki Batsa</p>
                   </div>
                 </Col>
@@ -479,7 +635,17 @@ function About() {
                          alt="Deputy Secretary"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Deputy Secretary</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Deputy Secretary
+                    </h5>
                     <p className="text-muted">Theola Awen</p>
                   </div>
                 </Col>
@@ -489,7 +655,17 @@ function About() {
                          alt="Health Administrator"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Health Administrator</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Health Administrator
+                    </h5>
                     <p className="text-muted">Dr. Priscilla Arthur-Johnson</p>
                   </div>
                 </Col>
@@ -499,7 +675,17 @@ function About() {
                          alt="MSCON Administrator"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">MSCON Administrator</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      MSCON Administrator
+                    </h5>
                     <p className="text-muted">Mrs. Juliiet Koudonu Seglah</p>
                   </div>
                 </Col>
@@ -511,7 +697,17 @@ function About() {
                          alt="Counselling & Career Development Coach"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Counselling & Career Dev. Coach</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Counselling & Career Dev. Coach
+                    </h5>
                     <p className="text-muted">Mrs Steffi Korsah</p>
                   </div>
                 </Col>
@@ -521,7 +717,17 @@ function About() {
                          alt="Relationship & Personality Development Coach"
                          className="img-fluid rounded-circle mb-3 shadow"
                          style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-                    <h5 className="fw-bold">Relationship & Personality Dev. Coach</h5>
+                    <h5 
+                      className="fw-bold" 
+                      style={{
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        fontSize: '1.1rem',
+                        fontWeight: '800'
+                      }}
+                    >
+                      Relationship & Personality Dev. Coach
+                    </h5>
                     <p className="text-muted">Miriam Kimani</p>
                   </div>
                 </Col>
