@@ -1,6 +1,20 @@
 /* Custom CSS for Meliorism Partners Foundation */
 /* Logo-inspired color scheme */
 
+/* Browser compatibility fixes for better cross-browser support */
+
+/* Fix any text-align webkit issues */
+body, html {
+  text-align: initial; /* Use standard value instead of webkit-specific ones */
+}
+
+/* Modern scroll behavior instead of deprecated webkit-overflow-scrolling */
+.scrollable-content {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
 /* Performance optimizations */
 * {
   box-sizing: border-box;
