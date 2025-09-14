@@ -86,70 +86,550 @@ function Contact() {
               }}>Contact Information</h2>
               <Row>
                 <Col md={6} lg={3} className="mb-4">
-                  <Card className="text-center border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                           style={{ width: '60px', height: '60px' }}>
-                        <h4 className="mb-0">📧</h4>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '25px',
+                    padding: '2.5rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(79, 119, 127, 0.1)',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px) scale(1.03)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(79, 119, 127, 0.2)';
+                    e.currentTarget.style.background = 'rgba(79, 119, 127, 0.05)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Animated gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #4F777F15, transparent)',
+                      opacity: 0.3,
+                      borderRadius: '25px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      <div style={{
+                        width: '80px',
+                        height: '80px',
+                        background: 'linear-gradient(135deg, #4F777F, #175760)',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '1.5rem',
+                        margin: '0 auto 1.5rem auto',
+                        boxShadow: '0 10px 30px rgba(79, 119, 127, 0.3)',
+                        border: '3px solid rgba(255, 255, 255, 0.2)'
+                      }}>
+                        {/* Custom Email Icon */}
+                        <div style={{
+                          width: '45px',
+                          height: '45px',
+                          background: 'white',
+                          borderRadius: '10px',
+                          position: 'relative',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <div style={{
+                            width: '32px',
+                            height: '22px',
+                            border: '3px solid #4F777F',
+                            borderRadius: '4px',
+                            position: 'relative'
+                          }}>
+                            <div style={{
+                              position: 'absolute',
+                              top: '2px',
+                              left: '2px',
+                              right: '2px',
+                              height: '2px',
+                              background: '#4F777F'
+                            }}></div>
+                            <div style={{
+                              position: 'absolute',
+                              top: '6px',
+                              left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: '0',
+                              height: '0',
+                              borderLeft: '8px solid transparent',
+                              borderRight: '8px solid transparent',
+                              borderTop: '6px solid #4F777F'
+                            }}></div>
+                          </div>
+                        </div>
                       </div>
-                      <h5>Email</h5>
-                      <p className="text-muted">meliorismpartnersfoundation@gmail.com</p>
-                      <Button variant="outline-primary" size="sm" href="mailto:meliorismpartnersfoundation@gmail.com">
+                      <h5 style={{ 
+                        fontWeight: '800', 
+                        color: '#175760', 
+                        marginBottom: '1rem',
+                        fontSize: '1.3rem'
+                      }}>Email</h5>
+                      <p style={{ 
+                        color: '#4F777F', 
+                        marginBottom: '1.5rem',
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5'
+                      }}>meliorismpartnersfoundation@gmail.com</p>
+                      <Button 
+                        href="mailto:meliorismpartnersfoundation@gmail.com"
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #4F777F',
+                          color: '#4F777F',
+                          borderRadius: '25px',
+                          fontWeight: '700',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#4F777F';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#4F777F';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
                         Send Email
                       </Button>
-                    </Card.Body>
-                  </Card>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} lg={3} className="mb-4">
-                  <Card className="text-center border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                           style={{ width: '60px', height: '60px' }}>
-                        <h4 className="mb-0">📞</h4>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '25px',
+                    padding: '2.5rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(220, 53, 69, 0.1)',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px) scale(1.03)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(220, 53, 69, 0.2)';
+                    e.currentTarget.style.background = 'rgba(220, 53, 69, 0.05)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Animated gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #DC354515, transparent)',
+                      opacity: 0.3,
+                      borderRadius: '25px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      <div style={{
+                        width: '80px',
+                        height: '80px',
+                        background: 'linear-gradient(135deg, #DC3545, #C82333)',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '1.5rem',
+                        margin: '0 auto 1.5rem auto',
+                        boxShadow: '0 10px 30px rgba(220, 53, 69, 0.3)',
+                        border: '3px solid rgba(255, 255, 255, 0.2)'
+                      }}>
+                        {/* Custom Phone Icon */}
+                        <div style={{
+                          width: '45px',
+                          height: '45px',
+                          background: 'white',
+                          borderRadius: '12px',
+                          position: 'relative',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <div style={{
+                            width: '20px',
+                            height: '32px',
+                            border: '3px solid #DC3545',
+                            borderRadius: '8px',
+                            position: 'relative'
+                          }}>
+                            <div style={{
+                              position: 'absolute',
+                              top: '3px',
+                              left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: '8px',
+                              height: '2px',
+                              background: '#DC3545',
+                              borderRadius: '1px'
+                            }}></div>
+                            <div style={{
+                              position: 'absolute',
+                              bottom: '3px',
+                              left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: '6px',
+                              height: '6px',
+                              background: '#DC3545',
+                              borderRadius: '50%'
+                            }}></div>
+                          </div>
+                        </div>
                       </div>
-                      <h5>Phone</h5>
-                      <p className="text-muted">
+                      <h5 style={{ 
+                        fontWeight: '800', 
+                        color: '#175760', 
+                        marginBottom: '1rem',
+                        fontSize: '1.3rem'
+                      }}>Phone</h5>
+                      <p style={{ 
+                        color: '#4F777F', 
+                        marginBottom: '1.5rem',
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5'
+                      }}>
                         +233(0)591517852<br />
                         +233(0)556102456
                       </p>
-                      <Button variant="outline-primary" size="sm" href="tel:+233591517852">
+                      <Button 
+                        href="tel:+233591517852"
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #DC3545',
+                          color: '#DC3545',
+                          borderRadius: '25px',
+                          fontWeight: '700',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#DC3545';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#DC3545';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
                         Call Us
                       </Button>
-                    </Card.Body>
-                  </Card>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} lg={3} className="mb-4">
-                  <Card className="text-center border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                           style={{ width: '60px', height: '60px' }}>
-                        <h4 className="mb-0">🌐</h4>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '25px',
+                    padding: '2.5rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(52, 152, 219, 0.1)',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px) scale(1.03)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(52, 152, 219, 0.2)';
+                    e.currentTarget.style.background = 'rgba(52, 152, 219, 0.05)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Animated gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #3498DB15, transparent)',
+                      opacity: 0.3,
+                      borderRadius: '25px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      <div style={{
+                        width: '80px',
+                        height: '80px',
+                        background: 'linear-gradient(135deg, #3498DB, #2980B9)',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '1.5rem',
+                        margin: '0 auto 1.5rem auto',
+                        boxShadow: '0 10px 30px rgba(52, 152, 219, 0.3)',
+                        border: '3px solid rgba(255, 255, 255, 0.2)'
+                      }}>
+                        {/* Custom Globe/Social Icon */}
+                        <div style={{
+                          width: '45px',
+                          height: '45px',
+                          background: 'white',
+                          borderRadius: '50%',
+                          position: 'relative',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          border: '3px solid #3498DB'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '0',
+                            right: '0',
+                            height: '2px',
+                            background: '#3498DB',
+                            transform: 'translateY(-50%)'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '0',
+                            bottom: '0',
+                            left: '50%',
+                            width: '2px',
+                            background: '#3498DB',
+                            transform: 'translateX(-50%)'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '6px',
+                            right: '6px',
+                            width: '8px',
+                            height: '8px',
+                            background: '#3498DB',
+                            borderRadius: '50%'
+                          }}></div>
+                        </div>
                       </div>
-                      <h5>Social Media</h5>
-                      <p className="text-muted">Follow us on social platforms</p>
-                      <Button variant="outline-primary" size="sm">
+                      <h5 style={{ 
+                        fontWeight: '800', 
+                        color: '#175760', 
+                        marginBottom: '1rem',
+                        fontSize: '1.3rem'
+                      }}>Social Media</h5>
+                      <p style={{ 
+                        color: '#4F777F', 
+                        marginBottom: '1.5rem',
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5'
+                      }}>Follow us on social platforms</p>
+                      <Button 
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #3498DB',
+                          color: '#3498DB',
+                          borderRadius: '25px',
+                          fontWeight: '700',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#3498DB';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#3498DB';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
                         Follow Us
                       </Button>
-                    </Card.Body>
-                  </Card>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} lg={3} className="mb-4">
-                  <Card className="text-center border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                           style={{ width: '60px', height: '60px' }}>
-                        <h4 className="mb-0">⏰</h4>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '25px',
+                    padding: '2.5rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(243, 156, 18, 0.1)',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px) scale(1.03)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(243, 156, 18, 0.2)';
+                    e.currentTarget.style.background = 'rgba(243, 156, 18, 0.05)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Animated gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #F39C1215, transparent)',
+                      opacity: 0.3,
+                      borderRadius: '25px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      <div style={{
+                        width: '80px',
+                        height: '80px',
+                        background: 'linear-gradient(135deg, #F39C12, #E67E22)',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '1.5rem',
+                        margin: '0 auto 1.5rem auto',
+                        boxShadow: '0 10px 30px rgba(243, 156, 18, 0.3)',
+                        border: '3px solid rgba(255, 255, 255, 0.2)'
+                      }}>
+                        {/* Custom Clock Icon */}
+                        <div style={{
+                          width: '45px',
+                          height: '45px',
+                          background: 'white',
+                          borderRadius: '50%',
+                          position: 'relative',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          border: '3px solid #F39C12'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '2px',
+                            height: '12px',
+                            background: '#F39C12',
+                            transformOrigin: 'bottom',
+                            borderRadius: '1px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%) rotate(90deg)',
+                            width: '2px',
+                            height: '8px',
+                            background: '#E67E22',
+                            transformOrigin: 'bottom',
+                            borderRadius: '1px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '4px',
+                            height: '4px',
+                            background: '#F39C12',
+                            borderRadius: '50%'
+                          }}></div>
+                        </div>
                       </div>
-                      <h5>Office Hours</h5>
-                      <p className="text-muted">
+                      <h5 style={{ 
+                        fontWeight: '800', 
+                        color: '#175760', 
+                        marginBottom: '1rem',
+                        fontSize: '1.3rem'
+                      }}>Office Hours</h5>
+                      <p style={{ 
+                        color: '#4F777F', 
+                        marginBottom: '1.5rem',
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5'
+                      }}>
                         Mon - Fri: 8:00 AM - 5:00 PM<br />
                         Sat: 9:00 AM - 2:00 PM
                       </p>
-                      <Button variant="outline-primary" size="sm" disabled>
+                      <Button 
+                        disabled
+                        style={{
+                          backgroundColor: 'rgba(243, 156, 18, 0.1)',
+                          border: '2px solid rgba(243, 156, 18, 0.3)',
+                          color: '#F39C12',
+                          borderRadius: '25px',
+                          fontWeight: '700',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          cursor: 'default'
+                        }}
+                      >
                         GMT+0
                       </Button>
-                    </Card.Body>
-                  </Card>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Col>

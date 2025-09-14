@@ -52,7 +52,7 @@ function Projects() {
                 <Row className="g-0">
                   <Col md={6}>
                     <div style={{ height: '300px', overflow: 'hidden' }}>
-                      <img src="/images/edu1.jpg"
+                      <img src="/images/mscon.jpg"
                            alt="MSCON Program Launch - Women empowerment"
                            style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
@@ -90,7 +90,7 @@ function Projects() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/help.jpg"
+                  <img src="/images/comm1.jpg"
                        alt="Community garden and sustainable living"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover' }} />
@@ -182,7 +182,7 @@ function Projects() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 border-0 shadow-sm">
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/vol1.jpg"
+                  <img src="/images/comm2.jpg"
                        alt="Community Partnership"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover' }} />

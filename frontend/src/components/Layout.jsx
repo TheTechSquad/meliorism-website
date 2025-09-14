@@ -14,7 +14,7 @@ function Layout({ children }) {
         <Container>
           <Navbar.Brand as={Link} to="/" className="navbar-brand-optimized">
             <img 
-              src="/logo1.png" 
+              src="logo1.png" 
               alt="Meliorism Partners Foundation Logo" 
               height="60"
               className="navbar-logo"

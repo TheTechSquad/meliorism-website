@@ -1,10 +1,42 @@
 {
   "name": "meliorism-website",
   "version": "1.0.0",
+  "description": "Meliorism Partners Foundation website - Full-stack application with React frontend and Node.js backend",
   "scripts": {
-    "build": "cd frontend && npm ci && npm run build",
+    "start": "cd frontend && npm start",
     "dev": "cd frontend && npm start",
-    "install": "cd frontend && npm install"
+    "build": "cd frontend && npm ci && npm run build",
+    "build:backend": "cd backend && npm ci",
+    "build:frontend": "cd frontend && npm ci && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../qa-testing && npm install",
+    "test": "cd qa-testing && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "docker:dev": "cd infrastructure && docker-compose up -d",
+    "docker:prod": "cd infrastructure && docker-compose -f docker-compose.prod.yml up -d",
+    "docker:down": "cd infrastructure && docker-compose down",
+    "clean": "cd frontend && rm -rf build node_modules && cd ../backend && rm -rf node_modules && cd ../qa-testing && rm -rf node_modules && rm -rf node_modules",
+    "postinstall": "cd frontend && npm install"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "foundation",
+    "donation",
+    "volunteer",
+    "fullstack"
+  ],
+  "author": "Meliorism Partners Foundation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheTechSquad/meliorism-website.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "dependencies": {},
   "devDependencies": {}

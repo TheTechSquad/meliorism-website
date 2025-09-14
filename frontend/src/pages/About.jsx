@@ -273,9 +273,49 @@ function About() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      margin: '0 auto 1.5rem'
+                      margin: '0 auto 1.5rem',
+                      boxShadow: '0 8px 25px rgba(79, 119, 127, 0.3)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}>
-                      <span style={{ fontSize: '2rem' }}>👂</span>
+                      {/* Listen/Ear Icon */}
+                      <div style={{
+                        width: '45px',
+                        height: '45px',
+                        background: 'white',
+                        borderRadius: '12px',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <div style={{
+                          width: '28px',
+                          height: '35px',
+                          background: '#4F777F',
+                          borderRadius: '14px 4px 4px 14px',
+                          position: 'relative'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '-2px',
+                            width: '12px',
+                            height: '18px',
+                            background: 'white',
+                            borderRadius: '6px 2px 2px 6px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '12px',
+                            right: '2px',
+                            width: '6px',
+                            height: '10px',
+                            background: '#175760',
+                            borderRadius: '3px'
+                          }}></div>
+                        </div>
+                      </div>
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 
@@ -307,14 +347,58 @@ function About() {
                     <div style={{
                       width: '80px',
                       height: '80px',
-                      background: 'linear-gradient(135deg, #DDD6DD, #CFCED3)',
+                      background: 'linear-gradient(135deg, #27AE60, #2ECC71)',
                       borderRadius: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      margin: '0 auto 1.5rem'
+                      margin: '0 auto 1.5rem',
+                      boxShadow: '0 8px 25px rgba(39, 174, 96, 0.3)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}>
-                      <span style={{ fontSize: '2rem' }}>🛡️</span>
+                      {/* Shield/Integrity Icon */}
+                      <div style={{
+                        width: '45px',
+                        height: '45px',
+                        background: 'white',
+                        borderRadius: '12px',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <div style={{
+                          width: '30px',
+                          height: '32px',
+                          background: '#27AE60',
+                          borderRadius: '15px 15px 0 0',
+                          position: 'relative',
+                          clipPath: 'polygon(50% 100%, 0% 75%, 0% 0%, 100% 0%, 100% 75%)'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '8px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '12px',
+                            height: '12px',
+                            background: 'white',
+                            borderRadius: '50%'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            top: '12px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '0',
+                            height: '0',
+                            borderLeft: '4px solid transparent',
+                            borderRight: '4px solid transparent',
+                            borderTop: '6px solid white'
+                          }}></div>
+                        </div>
+                      </div>
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 
@@ -346,14 +430,67 @@ function About() {
                     <div style={{
                       width: '80px',
                       height: '80px',
-                      background: 'linear-gradient(135deg, #CFCED3, #DDD6DD)',
+                      background: 'linear-gradient(135deg, #E67E22, #F39C12)',
                       borderRadius: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      margin: '0 auto 1.5rem'
+                      margin: '0 auto 1.5rem',
+                      boxShadow: '0 8px 25px rgba(230, 126, 34, 0.3)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}>
-                      <span style={{ fontSize: '2rem' }}>🤝</span>
+                      {/* Handshake/Collaboration Icon */}
+                      <div style={{
+                        width: '45px',
+                        height: '45px',
+                        background: 'white',
+                        borderRadius: '12px',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <div style={{
+                          width: '35px',
+                          height: '25px',
+                          position: 'relative'
+                        }}>
+                          {/* Left Hand */}
+                          <div style={{
+                            position: 'absolute',
+                            left: '0',
+                            top: '5px',
+                            width: '12px',
+                            height: '15px',
+                            background: '#E67E22',
+                            borderRadius: '6px 0 0 6px',
+                            transform: 'rotate(-10deg)'
+                          }}></div>
+                          {/* Right Hand */}
+                          <div style={{
+                            position: 'absolute',
+                            right: '0',
+                            top: '5px',
+                            width: '12px',
+                            height: '15px',
+                            background: '#E67E22',
+                            borderRadius: '0 6px 6px 0',
+                            transform: 'rotate(10deg)'
+                          }}></div>
+                          {/* Connection */}
+                          <div style={{
+                            position: 'absolute',
+                            left: '50%',
+                            top: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '18px',
+                            height: '8px',
+                            background: '#E67E22',
+                            borderRadius: '4px'
+                          }}></div>
+                        </div>
+                      </div>
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 
@@ -385,14 +522,86 @@ function About() {
                     <div style={{
                       width: '80px',
                       height: '80px',
-                      background: 'linear-gradient(135deg, #F4F2F5, #DDD6DD)',
+                      background: 'linear-gradient(135deg, #9B59B6, #8E44AD)',
                       borderRadius: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      margin: '0 auto 1.5rem'
+                      margin: '0 auto 1.5rem',
+                      boxShadow: '0 8px 25px rgba(155, 89, 182, 0.3)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}>
-                      <span style={{ fontSize: '2rem' }}>💥</span>
+                      {/* Impact/Star Burst Icon */}
+                      <div style={{
+                        width: '45px',
+                        height: '45px',
+                        background: 'white',
+                        borderRadius: '12px',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <div style={{
+                          width: '30px',
+                          height: '30px',
+                          position: 'relative'
+                        }}>
+                          {/* Central Circle */}
+                          <div style={{
+                            position: 'absolute',
+                            left: '50%',
+                            top: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '12px',
+                            height: '12px',
+                            background: '#9B59B6',
+                            borderRadius: '50%'
+                          }}></div>
+                          {/* Star Rays */}
+                          <div style={{
+                            position: 'absolute',
+                            left: '50%',
+                            top: '2px',
+                            transform: 'translateX(-50%)',
+                            width: '2px',
+                            height: '8px',
+                            background: '#9B59B6',
+                            borderRadius: '1px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            right: '2px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            width: '8px',
+                            height: '2px',
+                            background: '#9B59B6',
+                            borderRadius: '1px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            left: '50%',
+                            bottom: '2px',
+                            transform: 'translateX(-50%)',
+                            width: '2px',
+                            height: '8px',
+                            background: '#9B59B6',
+                            borderRadius: '1px'
+                          }}></div>
+                          <div style={{
+                            position: 'absolute',
+                            left: '2px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            width: '8px',
+                            height: '2px',
+                            background: '#9B59B6',
+                            borderRadius: '1px'
+                          }}></div>
+                        </div>
+                      </div>
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 

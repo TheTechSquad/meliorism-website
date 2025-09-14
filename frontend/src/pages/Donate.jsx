@@ -320,59 +320,608 @@ function Donate() {
       </section>
 
       {/* Other ways to give */}
-      <section className="py-5" style={{ background: '#F4F2F5' }}>
+      <section className="py-5" style={{ 
+        background: 'linear-gradient(135deg, #F4F2F5 0%, #E8E6EA 100%)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
         <Container>
           <Row>
             <Col lg={8} className="mx-auto">
-              <h2 className="display-5 fw-bold text-center mb-5">Other Ways to Give</h2>
+              <h2 className="display-5 fw-bold text-center mb-5" style={{
+                background: 'linear-gradient(135deg, #175760, #4F777F)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>Other Ways to Give</h2>
               <Row>
                 <Col md={6} className="mb-4">
-                  <Card className="border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <h5 className="text-primary mb-3">Bank Transfer</h5>
-                      <p>
-                        Make a direct bank transfer to our foundation account. 
-                        Contact us for banking details and transfer instructions.
-                      </p>
-                      <Button variant="outline-primary" size="sm">Get Bank Details</Button>
-                    </Card.Body>
-                  </Card>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '20px',
+                    padding: '1.8rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(23, 87, 96, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)',
+                    minHeight: '220px'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(23, 87, 96, 0.15)';
+                    e.currentTarget.style.background = 'rgba(23, 87, 96, 0.03)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Subtle gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #175760 0%, transparent 100%)',
+                      opacity: 0.02,
+                      borderRadius: '20px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}>
+                      <div>
+                        <div style={{
+                          width: '60px',
+                          height: '60px',
+                          background: 'linear-gradient(135deg, #175760, #4F777F)',
+                          borderRadius: '15px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: '1.2rem',
+                          boxShadow: '0 8px 20px rgba(23, 87, 96, 0.2)'
+                        }}>
+                          {/* Bank Icon */}
+                          <div style={{
+                            width: '30px',
+                            height: '30px',
+                            background: 'white',
+                            borderRadius: '6px',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <div style={{
+                              width: '22px',
+                              height: '16px',
+                              background: 'white',
+                              borderRadius: '3px',
+                              position: 'relative',
+                              border: '2px solid #175760'
+                            }}>
+                              <div style={{
+                                position: 'absolute',
+                                top: '2px',
+                                left: '2px',
+                                right: '2px',
+                                height: '1px',
+                                background: '#175760'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                top: '6px',
+                                left: '2px',
+                                right: '2px',
+                                height: '1px',
+                                background: '#175760'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                top: '10px',
+                                left: '2px',
+                                width: '6px',
+                                height: '1px',
+                                background: '#175760'
+                              }}></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 style={{ 
+                          color: '#175760', 
+                          marginBottom: '0.8rem',
+                          fontWeight: '700',
+                          fontSize: '1.2rem'
+                        }}>Bank Transfer</h5>
+                        <p style={{
+                          color: '#4F777F',
+                          lineHeight: '1.5',
+                          fontSize: '0.95rem',
+                          marginBottom: '1.2rem'
+                        }}>
+                          Make a direct bank transfer to our foundation account. 
+                          Contact us for banking details and transfer instructions.
+                        </p>
+                      </div>
+                      <Button 
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #175760',
+                          color: '#175760',
+                          borderRadius: '20px',
+                          fontWeight: '600',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease',
+                          alignSelf: 'flex-start'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#175760';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#175760';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
+                        Get Bank Details
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} className="mb-4">
-                  <Card className="border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <h5 className="text-primary mb-3">Mobile Money</h5>
-                      <p>
-                        Donate using mobile money services. We accept various mobile payment 
-                        platforms for your convenience.
-                      </p>
-                      <Button variant="outline-primary" size="sm">Mobile Payment Info</Button>
-                    </Card.Body>
-                  </Card>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '20px',
+                    padding: '1.8rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(230, 126, 34, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)',
+                    minHeight: '220px'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(230, 126, 34, 0.15)';
+                    e.currentTarget.style.background = 'rgba(230, 126, 34, 0.03)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Subtle gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #E67E22 0%, transparent 100%)',
+                      opacity: 0.02,
+                      borderRadius: '20px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}>
+                      <div>
+                        <div style={{
+                          width: '60px',
+                          height: '60px',
+                          background: 'linear-gradient(135deg, #E67E22, #F39C12)',
+                          borderRadius: '15px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: '1.2rem',
+                          boxShadow: '0 8px 20px rgba(230, 126, 34, 0.2)'
+                        }}>
+                          {/* Mobile Money Icon */}
+                          <div style={{
+                            width: '30px',
+                            height: '30px',
+                            background: 'white',
+                            borderRadius: '8px',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <div style={{
+                              width: '18px',
+                              height: '24px',
+                              background: 'white',
+                              borderRadius: '4px',
+                              position: 'relative',
+                              border: '2px solid #E67E22'
+                            }}>
+                              <div style={{
+                                position: 'absolute',
+                                top: '2px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                width: '8px',
+                                height: '1px',
+                                background: '#E67E22',
+                                borderRadius: '1px'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                bottom: '2px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                width: '6px',
+                                height: '6px',
+                                background: '#E67E22',
+                                borderRadius: '50%'
+                              }}></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 style={{ 
+                          color: '#175760', 
+                          marginBottom: '0.8rem',
+                          fontWeight: '700',
+                          fontSize: '1.2rem'
+                        }}>Mobile Money</h5>
+                        <p style={{
+                          color: '#4F777F',
+                          lineHeight: '1.5',
+                          fontSize: '0.95rem',
+                          marginBottom: '1.2rem'
+                        }}>
+                          Donate using mobile money services. We accept various mobile payment 
+                          platforms for your convenience.
+                        </p>
+                      </div>
+                      <Button 
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #E67E22',
+                          color: '#E67E22',
+                          borderRadius: '20px',
+                          fontWeight: '600',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease',
+                          alignSelf: 'flex-start'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#E67E22';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#E67E22';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
+                        Mobile Payment Info
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} className="mb-4">
-                  <Card className="border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <h5 className="text-primary mb-3">In-Kind Donations</h5>
-                      <p>
-                        Donate goods, services, or equipment that can support our programs 
-                        and community initiatives.
-                      </p>
-                      <Button variant="outline-primary" size="sm">Learn More</Button>
-                    </Card.Body>
-                  </Card>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '20px',
+                    padding: '1.8rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(39, 174, 96, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)',
+                    minHeight: '220px'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(39, 174, 96, 0.15)';
+                    e.currentTarget.style.background = 'rgba(39, 174, 96, 0.03)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Subtle gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #27AE60 0%, transparent 100%)',
+                      opacity: 0.02,
+                      borderRadius: '20px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}>
+                      <div>
+                        <div style={{
+                          width: '60px',
+                          height: '60px',
+                          background: 'linear-gradient(135deg, #27AE60, #2ECC71)',
+                          borderRadius: '15px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: '1.2rem',
+                          boxShadow: '0 8px 20px rgba(39, 174, 96, 0.2)'
+                        }}>
+                          {/* In-Kind Donations Icon */}
+                          <div style={{
+                            width: '30px',
+                            height: '30px',
+                            background: 'white',
+                            borderRadius: '6px',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <div style={{
+                              width: '20px',
+                              height: '20px',
+                              background: 'white',
+                              borderRadius: '3px',
+                              position: 'relative',
+                              border: '2px solid #27AE60'
+                            }}>
+                              <div style={{
+                                position: 'absolute',
+                                top: '4px',
+                                left: '4px',
+                                width: '8px',
+                                height: '8px',
+                                border: '1px solid #27AE60',
+                                borderRadius: '1px'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                top: '6px',
+                                left: '6px',
+                                width: '4px',
+                                height: '4px',
+                                background: '#2ECC71',
+                                borderRadius: '50%'
+                              }}></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 style={{ 
+                          color: '#175760', 
+                          marginBottom: '0.8rem',
+                          fontWeight: '700',
+                          fontSize: '1.2rem'
+                        }}>In-Kind Donations</h5>
+                        <p style={{
+                          color: '#4F777F',
+                          lineHeight: '1.5',
+                          fontSize: '0.95rem',
+                          marginBottom: '1.2rem'
+                        }}>
+                          Donate goods, services, or equipment that can support our programs 
+                          and community initiatives.
+                        </p>
+                      </div>
+                      <Button 
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #27AE60',
+                          color: '#27AE60',
+                          borderRadius: '20px',
+                          fontWeight: '600',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease',
+                          alignSelf: 'flex-start'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#27AE60';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#27AE60';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
+                        Learn More
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
+                
                 <Col md={6} className="mb-4">
-                  <Card className="border-0 shadow-sm h-100">
-                    <Card.Body>
-                      <h5 className="text-primary mb-3">Corporate Partnerships</h5>
-                      <p>
-                        Partner with us as a corporate sponsor to make a larger impact 
-                        in community development and social change.
-                      </p>
-                      <Button variant="outline-primary" size="sm">Partnership Info</Button>
-                    </Card.Body>
-                  </Card>
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '20px',
+                    padding: '1.8rem 1.5rem',
+                    height: '100%',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(142, 68, 173, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)',
+                    minHeight: '220px'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(142, 68, 173, 0.15)';
+                    e.currentTarget.style.background = 'rgba(142, 68, 173, 0.03)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                  }}
+                  >
+                    {/* Subtle gradient background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(135deg, #8E44AD 0%, transparent 100%)',
+                      opacity: 0.02,
+                      borderRadius: '20px'
+                    }}></div>
+                    
+                    <div style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}>
+                      <div>
+                        <div style={{
+                          width: '60px',
+                          height: '60px',
+                          background: 'linear-gradient(135deg, #8E44AD, #9B59B6)',
+                          borderRadius: '15px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: '1.2rem',
+                          boxShadow: '0 8px 20px rgba(142, 68, 173, 0.2)'
+                        }}>
+                          {/* Corporate Partnership Icon */}
+                          <div style={{
+                            width: '30px',
+                            height: '30px',
+                            background: 'white',
+                            borderRadius: '6px',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <div style={{
+                              width: '20px',
+                              height: '20px',
+                              background: 'white',
+                              borderRadius: '3px',
+                              position: 'relative'
+                            }}>
+                              <div style={{
+                                position: 'absolute',
+                                top: '3px',
+                                left: '3px',
+                                width: '6px',
+                                height: '6px',
+                                background: '#8E44AD',
+                                borderRadius: '50%'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                top: '3px',
+                                right: '3px',
+                                width: '6px',
+                                height: '6px',
+                                background: '#9B59B6',
+                                borderRadius: '50%'
+                              }}></div>
+                              <div style={{
+                                position: 'absolute',
+                                bottom: '3px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                width: '12px',
+                                height: '2px',
+                                background: '#8E44AD',
+                                borderRadius: '1px'
+                              }}></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 style={{ 
+                          color: '#175760', 
+                          marginBottom: '0.8rem',
+                          fontWeight: '700',
+                          fontSize: '1.2rem'
+                        }}>Corporate Partnerships</h5>
+                        <p style={{
+                          color: '#4F777F',
+                          lineHeight: '1.5',
+                          fontSize: '0.95rem',
+                          marginBottom: '1.2rem'
+                        }}>
+                          Partner with us as a corporate sponsor to make a larger impact 
+                          in community development and social change.
+                        </p>
+                      </div>
+                      <Button 
+                        style={{
+                          backgroundColor: 'transparent',
+                          border: '2px solid #8E44AD',
+                          color: '#8E44AD',
+                          borderRadius: '20px',
+                          fontWeight: '600',
+                          padding: '8px 20px',
+                          fontSize: '0.9rem',
+                          transition: 'all 0.3s ease',
+                          alignSelf: 'flex-start'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = '#8E44AD';
+                          e.target.style.color = 'white';
+                          e.target.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                          e.target.style.color = '#8E44AD';
+                          e.target.style.transform = 'scale(1)';
+                        }}
+                      >
+                        Partnership Info
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Col>

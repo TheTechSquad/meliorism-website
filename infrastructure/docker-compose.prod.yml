@@ -1,0 +1,85 @@
+# Production Docker Compose Configuration
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:6.0
+    container_name: meliorism_mongodb_prod
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: meliorism_foundation
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - meliorism_network
+
+  # Backend Service
+  backend:
+    build: 
+      context: ../backend
+      dockerfile: Dockerfile.prod
+    container_name: meliorism_backend_prod
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - PAYSTACK_SECRET_KEY=${PAYSTACK_SECRET_KEY}
+      - PAYSTACK_PUBLIC_KEY=${PAYSTACK_PUBLIC_KEY}
+      - CORS_ORIGIN=${CORS_ORIGIN}
+      - PORT=5000
+    depends_on:
+      - mongodb
+    networks:
+      - meliorism_network
+    command: npm start
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile.prod
+    container_name: meliorism_frontend_prod
+    restart: always
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL}
+      - REACT_APP_PAYSTACK_PUBLIC_KEY=${REACT_APP_PAYSTACK_PUBLIC_KEY}
+    depends_on:
+      - backend
+    networks:
+      - meliorism_network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: meliorism_nginx_prod
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro  # SSL certificates
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - meliorism_network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  meliorism_network:
+    driver: bridge

@@ -438,7 +438,7 @@ function Home() {
             </Col>
             <Col lg={6}>
               <img 
-                src="/images/mscon.jpg"
+                src="/images/edu3.jpg"
                 alt="Young people engaged in learning and development activities"
                 style={{
                   width: '100%',
@@ -505,13 +505,6 @@ function Home() {
                 backdropFilter: 'blur(15px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)'
               }}>
-                <div style={{
-                  fontSize: '3rem',
-                  marginBottom: '30px',
-                  opacity: 0.8
-                }}>
-                  💭
-                </div>
                 <blockquote style={{
                   fontSize: '1.4rem',
                   fontStyle: 'italic',
@@ -618,62 +611,240 @@ function Home() {
           </Row>
           <Row>
             {[
-              { number: '500+', label: 'Lives Transformed', icon: '👥', description: 'Young people empowered' },
-              { number: '25+', label: 'Active Programs', icon: '🎓', description: 'Across multiple sectors' },
-              { number: '10+', label: 'Communities Served', icon: '🌍', description: 'Rural & urban areas' },
-              { number: '100%', label: 'Commitment', icon: '💪', description: 'To lasting change' }
+              { 
+                number: '500+', 
+                label: 'Lives Transformed', 
+                description: 'Young people empowered',
+                iconType: 'people',
+                color: '#9B59B6'
+              },
+              { 
+                number: '25+', 
+                label: 'Active Programs', 
+                description: 'Across multiple sectors',
+                iconType: 'graduation',
+                color: '#E67E22'
+              },
+              { 
+                number: '10+', 
+                label: 'Communities Served', 
+                description: 'Rural & urban areas',
+                iconType: 'globe',
+                color: '#3498DB'
+              },
+              { 
+                number: '100%', 
+                label: 'Commitment', 
+                description: 'To lasting change',
+                iconType: 'heart',
+                color: '#F39C12'
+              }
             ].map((stat, index) => (
               <Col md={3} className="text-center mb-4" key={index}>
                 <div style={{
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  borderRadius: '20px',
-                  padding: '35px 20px',
-                  backdropFilter: 'blur(15px)',
-                  border: '1px solid rgba(255, 255, 255, 0.25)',
-                  transition: 'all 0.3s ease',
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  borderRadius: '25px',
+                  padding: '40px 25px',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   cursor: 'pointer',
-                  height: '100%'
+                  height: '100%',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.18)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+                  e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                  e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.25)';
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
                 >
+                  {/* Animated background gradient */}
                   <div style={{
-                    fontSize: '2.5rem',
-                    marginBottom: '12px'
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: `linear-gradient(135deg, ${stat.color}15, transparent)`,
+                    opacity: 0.3,
+                    borderRadius: '25px'
+                  }}></div>
+                  
+                  {/* Modern Icon */}
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    margin: '0 auto 20px',
+                    background: `linear-gradient(135deg, ${stat.color}, ${stat.color}CC)`,
+                    borderRadius: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative',
+                    boxShadow: `0 10px 30px ${stat.color}40`,
+                    animation: 'pulse 2s infinite'
                   }}>
-                    {stat.icon}
+                    {stat.iconType === 'people' && (
+                      <div style={{
+                        width: '35px',
+                        height: '35px',
+                        background: 'white',
+                        borderRadius: '50%',
+                        position: 'relative'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '12px',
+                          height: '12px',
+                          background: stat.color,
+                          borderRadius: '50%'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '18px',
+                          height: '10px',
+                          background: stat.color,
+                          borderRadius: '9px 9px 0 0'
+                        }}></div>
+                      </div>
+                    )}
+                    {stat.iconType === 'graduation' && (
+                      <div style={{
+                        width: '35px',
+                        height: '35px',
+                        background: 'white',
+                        borderRadius: '6px',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <div style={{
+                          width: '20px',
+                          height: '3px',
+                          background: stat.color,
+                          borderRadius: '2px',
+                          position: 'relative'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '-6px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '0',
+                            height: '0',
+                            borderLeft: '8px solid transparent',
+                            borderRight: '8px solid transparent',
+                            borderBottom: `10px solid ${stat.color}`
+                          }}></div>
+                        </div>
+                      </div>
+                    )}
+                    {stat.iconType === 'globe' && (
+                      <div style={{
+                        width: '35px',
+                        height: '35px',
+                        background: 'white',
+                        borderRadius: '50%',
+                        position: 'relative',
+                        border: `3px solid ${stat.color}`
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '0',
+                          right: '0',
+                          height: '2px',
+                          background: stat.color,
+                          transform: 'translateY(-50%)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '0',
+                          bottom: '0',
+                          left: '50%',
+                          width: '2px',
+                          background: stat.color,
+                          transform: 'translateX(-50%)'
+                        }}></div>
+                      </div>
+                    )}
+                    {stat.iconType === 'heart' && (
+                      <div style={{
+                        width: '30px',
+                        height: '30px',
+                        background: 'white',
+                        position: 'relative',
+                        transform: 'rotate(45deg)'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '-15px',
+                          left: '0',
+                          width: '30px',
+                          height: '30px',
+                          background: stat.color,
+                          borderRadius: '50% 50% 0 50%',
+                          transform: 'rotate(-45deg)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '-15px',
+                          left: '-15px',
+                          width: '30px',
+                          height: '30px',
+                          background: stat.color,
+                          borderRadius: '50% 50% 50% 0',
+                          transform: 'rotate(-45deg)'
+                        }}></div>
+                      </div>
+                    )}
                   </div>
+                  
                   <div style={{
-                    fontSize: '3.5rem',
+                    fontSize: '4rem',
                     fontWeight: '900',
                     color: '#DDD6DD',
-                    marginBottom: '10px',
-                    lineHeight: '1'
+                    marginBottom: '15px',
+                    lineHeight: '1',
+                    textShadow: '0 5px 15px rgba(0,0,0,0.1)',
+                    position: 'relative',
+                    zIndex: 2
                   }}>
                     {stat.number}
                   </div>
                   <h5 style={{ 
-                    fontWeight: '700',
-                    fontSize: '1.1rem',
+                    fontWeight: '800',
+                    fontSize: '1.2rem',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    marginBottom: '8px'
+                    letterSpacing: '1px',
+                    marginBottom: '12px',
+                    color: 'white',
+                    position: 'relative',
+                    zIndex: 2
                   }}>
                     {stat.label}
                   </h5>
                   <p style={{
-                    fontSize: '0.9rem',
-                    opacity: 0.9,
+                    fontSize: '1rem',
+                    opacity: 0.95,
                     margin: 0,
-                    fontWeight: '400'
+                    fontWeight: '500',
+                    color: '#DDD6DD',
+                    position: 'relative',
+                    zIndex: 2
                   }}>
                     {stat.description}
                   </p>
@@ -776,7 +947,7 @@ function Home() {
               }}
               >
                 <img
-                  src="/images/feed1.jpg"
+                  src="/images/comm1.jpg"
                   alt="Community development and empowerment"
                   style={{
                     width: '100%',
@@ -903,76 +1074,276 @@ function Home() {
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginBottom: '25px'
-                }}>
+                  marginBottom: '30px',
+                  padding: '20px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(10px)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+                >
                   <div style={{
-                    width: '60px',
-                    height: '60px',
-                    background: 'linear-gradient(135deg, #DDD6DD, rgba(255,255,255,0.9))',
-                    borderRadius: '15px',
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #8E44AD, #9B59B6)',
+                    borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginRight: '20px',
-                    fontSize: '1.5rem'
+                    marginRight: '25px',
+                    boxShadow: '0 8px 25px rgba(142, 68, 173, 0.4)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
-                    🎓
+                    {/* Educational Excellence Icon - Graduation Cap */}
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      background: 'white',
+                      borderRadius: '8px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        width: '28px',
+                        height: '4px',
+                        background: '#8E44AD',
+                        borderRadius: '2px',
+                        position: 'relative'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '-8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '0',
+                          height: '0',
+                          borderLeft: '10px solid transparent',
+                          borderRight: '10px solid transparent',
+                          borderBottom: '12px solid #8E44AD'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '6px',
+                          right: '-3px',
+                          width: '8px',
+                          height: '12px',
+                          background: '#8E44AD',
+                          borderRadius: '0 0 4px 4px'
+                        }}></div>
+                      </div>
+                    </div>
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '5px' }}>Educational Excellence</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>Critical thinking & lifelong learning</p>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '8px',
+                      color: 'white',
+                      fontSize: '1.3rem'
+                    }}>Educational Excellence</h4>
+                    <p style={{ 
+                      margin: 0, 
+                      opacity: 0.9,
+                      fontSize: '1.1rem',
+                      color: '#DDD6DD'
+                    }}>Critical thinking & lifelong learning</p>
                   </div>
                 </div>
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginBottom: '25px'
-                }}>
+                  marginBottom: '30px',
+                  padding: '20px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(10px)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+                >
                   <div style={{
-                    width: '60px',
-                    height: '60px',
-                    background: 'linear-gradient(135deg, #DDD6DD, rgba(255,255,255,0.9))',
-                    borderRadius: '15px',
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #E67E22, #F39C12)',
+                    borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginRight: '20px',
-                    fontSize: '1.5rem'
+                    marginRight: '25px',
+                    boxShadow: '0 8px 25px rgba(230, 126, 34, 0.4)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
-                    💪
+                    {/* Women's Empowerment Icon - Strong Female Symbol */}
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      background: 'white',
+                      borderRadius: '50%',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        width: '18px',
+                        height: '18px',
+                        background: '#E67E22',
+                        borderRadius: '50%',
+                        position: 'relative'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '20px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '14px',
+                          height: '12px',
+                          background: '#E67E22',
+                          borderRadius: '7px 7px 0 0'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '28px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '6px',
+                          height: '6px',
+                          background: '#E67E22',
+                          borderRadius: '50%'
+                        }}></div>
+                      </div>
+                    </div>
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '5px' }}>Women's Empowerment</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>MSCON leadership development</p>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '8px',
+                      color: 'white',
+                      fontSize: '1.3rem'
+                    }}>Women's Empowerment</h4>
+                    <p style={{ 
+                      margin: 0, 
+                      opacity: 0.9,
+                      fontSize: '1.1rem',
+                      color: '#DDD6DD'
+                    }}>MSCON leadership development</p>
                   </div>
                 </div>
                 <div style={{
                   display: 'flex',
-                  alignItems: 'center'
-                }}>
+                  alignItems: 'center',
+                  padding: '20px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateX(10px)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+                >
                   <div style={{
-                    width: '60px',
-                    height: '60px',
-                    background: 'linear-gradient(135deg, #DDD6DD, rgba(255,255,255,0.9))',
-                    borderRadius: '15px',
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #27AE60, #2ECC71)',
+                    borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginRight: '20px',
-                    fontSize: '1.5rem'
+                    marginRight: '25px',
+                    boxShadow: '0 8px 25px rgba(39, 174, 96, 0.4)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
-                    🏥
+                    {/* Health Synergy Icon - Medical Cross with Heart */}
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      background: 'white',
+                      borderRadius: '10px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        width: '20px',
+                        height: '4px',
+                        background: '#27AE60',
+                        borderRadius: '2px',
+                        position: 'absolute'
+                      }}></div>
+                      <div style={{
+                        width: '4px',
+                        height: '20px',
+                        background: '#27AE60',
+                        borderRadius: '2px',
+                        position: 'absolute'
+                      }}></div>
+                      <div style={{
+                        position: 'absolute',
+                        top: '-5px',
+                        right: '-5px',
+                        width: '12px',
+                        height: '12px',
+                        background: '#E74C3C',
+                        borderRadius: '50% 50% 0 50%',
+                        transform: 'rotate(45deg)'
+                      }}></div>
+                    </div>
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: '700', marginBottom: '5px' }}>Health Synergy</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>Community wellness initiatives</p>
+                    <h4 style={{ 
+                      fontWeight: '800', 
+                      marginBottom: '8px',
+                      color: 'white',
+                      fontSize: '1.3rem'
+                    }}>Health Synergy</h4>
+                    <p style={{ 
+                      margin: 0, 
+                      opacity: 0.9,
+                      fontSize: '1.1rem',
+                      color: '#DDD6DD'
+                    }}>Community wellness initiatives</p>
                   </div>
                 </div>
               </div>
             </Col>
             <Col lg={6}>
               <img
-                src="/images/feed2.jpg"
+                src="/images/happy3.jpg"
                 alt="Inspiring individuals working together for community development"
                 style={{
                   width: '100%',
@@ -1015,7 +1386,7 @@ function Home() {
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                🤝 Bring Our Programs to Your Community
+                Bring Our Programs to Your Community
               </Button>
             </Col>
           </Row>
@@ -1056,208 +1427,472 @@ function Home() {
           <Row>
             <Col md={6} lg={4} className="mb-4">
               <div style={{
-                background: 'rgba(255, 255, 255, 0.95)',
+                background: `linear-gradient(
+                  135deg,
+                  rgba(79, 119, 127, 0.95) 0%,
+                  rgba(23, 87, 96, 0.9) 100%
+                ),
+                url('/images/edu2.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 borderRadius: '25px',
                 padding: '2.5rem 2rem',
                 height: '100%',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                 cursor: 'pointer',
-                backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                textAlign: 'center'
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden'
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 25px 60px rgba(0,0,0,0.18)';
+                e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 30px 70px rgba(0,0,0,0.25)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
                 e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.12)';
               }}
               >
+                {/* Background overlay for better text readability */}
                 <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #4F777F, #175760)',
-                  borderRadius: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1.5rem',
-                  margin: '0 auto 1.5rem auto'
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(0,0,0,0.3)',
+                  borderRadius: '25px'
+                }}></div>
+                
+                <div style={{
+                  position: 'relative',
+                  zIndex: 2
                 }}>
-                  <span style={{ fontSize: '2rem' }}>🎓</span>
+                  <div style={{
+                    width: '90px',
+                    height: '90px',
+                    background: 'linear-gradient(135deg, #8E44AD, #9B59B6)',
+                    borderRadius: '22px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.5rem',
+                    margin: '0 auto 1.5rem auto',
+                    boxShadow: '0 10px 30px rgba(142, 68, 173, 0.4)',
+                    border: '3px solid rgba(255, 255, 255, 0.2)'
+                  }}>
+                    {/* Educational Excellence Icon - Advanced Graduation Cap */}
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      background: 'white',
+                      borderRadius: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        width: '35px',
+                        height: '5px',
+                        background: '#8E44AD',
+                        borderRadius: '3px',
+                        position: 'relative'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '-10px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '0',
+                          height: '0',
+                          borderLeft: '12px solid transparent',
+                          borderRight: '12px solid transparent',
+                          borderBottom: '15px solid #8E44AD'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '8px',
+                          right: '-4px',
+                          width: '10px',
+                          height: '15px',
+                          background: '#8E44AD',
+                          borderRadius: '0 0 5px 5px'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          top: '-18px',
+                          left: '12px',
+                          width: '12px',
+                          height: '3px',
+                          background: '#8E44AD',
+                          borderRadius: '2px'
+                        }}></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 style={{ 
+                    fontWeight: '800', 
+                    color: 'white', 
+                    marginBottom: '1rem',
+                    fontSize: '1.4rem',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                  }}>
+                    Empowering Through Education
+                  </h4>
+                  <p style={{ 
+                    color: 'rgba(255,255,255,0.95)', 
+                    lineHeight: '1.7',
+                    fontSize: '1.05rem',
+                    marginBottom: '25px',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
+                  }}>
+                    Dismantling barriers to high-quality education and skill development, ensuring equitable 
+                    access to lifelong learning opportunities through mentoring and educational resources.
+                  </p>
+                  <Button 
+                    as={Link}
+                    to="/education"
+                    size="sm"
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      border: '2px solid rgba(255, 255, 255, 0.5)',
+                      color: 'white',
+                      borderRadius: '25px',
+                      fontWeight: '700',
+                      padding: '10px 25px',
+                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                      e.target.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </div>
-                <h4 style={{ 
-                  fontWeight: '700', 
-                  color: '#175760', 
-                  marginBottom: '1rem',
-                  fontSize: '1.3rem'
-                }}>
-                  Empowering Through Education
-                </h4>
-                <p style={{ 
-                  color: '#4F777F', 
-                  lineHeight: '1.7',
-                  fontSize: '1rem',
-                  marginBottom: '20px'
-                }}>
-                  Dismantling barriers to high-quality education and skill development, ensuring equitable 
-                  access to lifelong learning opportunities through mentoring and educational resources.
-                </p>
-                <Button 
-                  as={Link}
-                  to="/education"
-                  variant="outline-primary"
-                  size="sm"
-                  style={{
-                    borderRadius: '20px',
-                    borderColor: '#4F777F',
-                    color: '#4F777F',
-                    fontWeight: '600'
-                  }}
-                >
-                  Learn More
-                </Button>
               </div>
             </Col>
             
             <Col md={6} lg={4} className="mb-4">
               <div style={{
-                background: 'rgba(255, 255, 255, 0.95)',
+                background: `linear-gradient(
+                  135deg,
+                  rgba(230, 126, 34, 0.95) 0%,
+                  rgba(243, 156, 18, 0.9) 100%
+                ),
+                url('/images/mscon.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 borderRadius: '25px',
                 padding: '2.5rem 2rem',
                 height: '100%',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                 cursor: 'pointer',
-                backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                textAlign: 'center'
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden'
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 25px 60px rgba(0,0,0,0.18)';
+                e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 30px 70px rgba(0,0,0,0.25)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
                 e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.12)';
               }}
               >
+                {/* Background overlay for better text readability */}
                 <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #DDD6DD, #CFCED3)',
-                  borderRadius: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1.5rem',
-                  margin: '0 auto 1.5rem auto'
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(0,0,0,0.3)',
+                  borderRadius: '25px'
+                }}></div>
+                
+                <div style={{
+                  position: 'relative',
+                  zIndex: 2
                 }}>
-                  <span style={{ fontSize: '2rem' }}>👥</span>
+                  <div style={{
+                    width: '90px',
+                    height: '90px',
+                    background: 'linear-gradient(135deg, #E67E22, #F39C12)',
+                    borderRadius: '22px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.5rem',
+                    margin: '0 auto 1.5rem auto',
+                    boxShadow: '0 10px 30px rgba(230, 126, 34, 0.4)',
+                    border: '3px solid rgba(255, 255, 255, 0.2)'
+                  }}>
+                    {/* Women's Empowerment Icon - Strong Female Figures */}
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      background: 'white',
+                      borderRadius: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        gap: '6px',
+                        alignItems: 'center'
+                      }}>
+                        {/* First female figure */}
+                        <div style={{
+                          width: '14px',
+                          height: '14px',
+                          background: '#E67E22',
+                          borderRadius: '50%',
+                          position: 'relative'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '16px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '12px',
+                            height: '10px',
+                            background: '#E67E22',
+                            borderRadius: '6px 6px 0 0'
+                          }}></div>
+                        </div>
+                        {/* Second female figure */}
+                        <div style={{
+                          width: '14px',
+                          height: '14px',
+                          background: '#F39C12',
+                          borderRadius: '50%',
+                          position: 'relative'
+                        }}>
+                          <div style={{
+                            position: 'absolute',
+                            top: '16px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '12px',
+                            height: '10px',
+                            background: '#F39C12',
+                            borderRadius: '6px 6px 0 0'
+                          }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 style={{ 
+                    fontWeight: '800', 
+                    color: 'white', 
+                    marginBottom: '1rem',
+                    fontSize: '1.4rem',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                  }}>
+                    Meliorism She Connects (MSCON)
+                  </h4>
+                  <p style={{ 
+                    color: 'rgba(255,255,255,0.95)', 
+                    lineHeight: '1.7',
+                    fontSize: '1.05rem',
+                    marginBottom: '25px',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
+                  }}>
+                    Comprehensive support program empowering women and vulnerable populations through 
+                    mentorship, life skills training, and resources to foster resilience and independence.
+                  </p>
+                  <Button 
+                    as={Link}
+                    to="/mscon"
+                    size="sm"
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      border: '2px solid rgba(255, 255, 255, 0.5)',
+                      color: 'white',
+                      borderRadius: '25px',
+                      fontWeight: '700',
+                      padding: '10px 25px',
+                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                      e.target.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </div>
-                <h4 style={{ 
-                  fontWeight: '700', 
-                  color: '#175760', 
-                  marginBottom: '1rem',
-                  fontSize: '1.3rem'
-                }}>
-                  Meliorism She Connects (MSCON)
-                </h4>
-                <p style={{ 
-                  color: '#4F777F', 
-                  lineHeight: '1.7',
-                  fontSize: '1rem',
-                  marginBottom: '20px'
-                }}>
-                  Comprehensive support program empowering women and vulnerable populations through 
-                  mentorship, life skills training, and resources to foster resilience and independence.
-                </p>
-                <Button 
-                  as={Link}
-                  to="/mscon"
-                  variant="outline-primary"
-                  size="sm"
-                  style={{
-                    borderRadius: '20px',
-                    borderColor: '#4F777F',
-                    color: '#4F777F',
-                    fontWeight: '600'
-                  }}
-                >
-                  Learn More
-                </Button>
               </div>
             </Col>
             
             <Col md={6} lg={4} className="mb-4">
               <div style={{
-                background: 'rgba(255, 255, 255, 0.95)',
+                background: `linear-gradient(
+                  135deg,
+                  rgba(39, 174, 96, 0.95) 0%,
+                  rgba(46, 204, 113, 0.9) 100%
+                ),
+                url('/images/help.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 borderRadius: '25px',
                 padding: '2.5rem 2rem',
                 height: '100%',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.12)',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                 cursor: 'pointer',
-                backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                textAlign: 'center'
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden'
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 25px 60px rgba(0,0,0,0.18)';
+                e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 30px 70px rgba(0,0,0,0.25)';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
                 e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.12)';
               }}
               >
+                {/* Background overlay for better text readability */}
                 <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #CFCED3, #DDD6DD)',
-                  borderRadius: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1.5rem',
-                  margin: '0 auto 1.5rem auto'
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(0,0,0,0.3)',
+                  borderRadius: '25px'
+                }}></div>
+                
+                <div style={{
+                  position: 'relative',
+                  zIndex: 2
                 }}>
-                  <span style={{ fontSize: '2rem' }}>🏥</span>
+                  <div style={{
+                    width: '90px',
+                    height: '90px',
+                    background: 'linear-gradient(135deg, #27AE60, #2ECC71)',
+                    borderRadius: '22px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.5rem',
+                    margin: '0 auto 1.5rem auto',
+                    boxShadow: '0 10px 30px rgba(39, 174, 96, 0.4)',
+                    border: '3px solid rgba(255, 255, 255, 0.2)'
+                  }}>
+                    {/* Health Synergy Icon - Advanced Medical Cross with Heart */}
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      background: 'white',
+                      borderRadius: '12px',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{
+                        width: '25px',
+                        height: '5px',
+                        background: '#27AE60',
+                        borderRadius: '3px',
+                        position: 'absolute'
+                      }}></div>
+                      <div style={{
+                        width: '5px',
+                        height: '25px',
+                        background: '#27AE60',
+                        borderRadius: '3px',
+                        position: 'absolute'
+                      }}></div>
+                      <div style={{
+                        position: 'absolute',
+                        top: '-8px',
+                        right: '-8px',
+                        width: '16px',
+                        height: '16px',
+                        background: '#E74C3C',
+                        borderRadius: '50% 50% 0 50%',
+                        transform: 'rotate(45deg)'
+                      }}></div>
+                      <div style={{
+                        position: 'absolute',
+                        bottom: '-8px',
+                        left: '-8px',
+                        width: '12px',
+                        height: '12px',
+                        background: '#3498DB',
+                        borderRadius: '50%'
+                      }}></div>
+                    </div>
+                  </div>
+                  <h4 style={{ 
+                    fontWeight: '800', 
+                    color: 'white', 
+                    marginBottom: '1rem',
+                    fontSize: '1.4rem',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                  }}>
+                    Meliorism Health Synergy
+                  </h4>
+                  <p style={{ 
+                    color: 'rgba(255,255,255,0.95)', 
+                    lineHeight: '1.7',
+                    fontSize: '1.05rem',
+                    marginBottom: '25px',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
+                  }}>
+                    Holistic health education and wellness initiatives that promote thriving, healthy 
+                    communities through comprehensive health support and awareness programs.
+                  </p>
+                  <Button 
+                    as={Link}
+                    to="/health-synergy"
+                    size="sm"
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      border: '2px solid rgba(255, 255, 255, 0.5)',
+                      color: 'white',
+                      borderRadius: '25px',
+                      fontWeight: '700',
+                      padding: '10px 25px',
+                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                      e.target.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </div>
-                <h4 style={{ 
-                  fontWeight: '700', 
-                  color: '#175760', 
-                  marginBottom: '1rem',
-                  fontSize: '1.3rem'
-                }}>
-                  Meliorism Health Synergy
-                </h4>
-                <p style={{ 
-                  color: '#4F777F', 
-                  lineHeight: '1.7',
-                  fontSize: '1rem',
-                  marginBottom: '20px'
-                }}>
-                  Holistic health education and wellness initiatives that promote thriving, healthy 
-                  communities through comprehensive health support and awareness programs.
-                </p>
-                <Button 
-                  as={Link}
-                  to="/health-synergy"
-                  variant="outline-primary"
-                  size="sm"
-                  style={{
-                    borderRadius: '20px',
-                    borderColor: '#4F777F',
-                    color: '#4F777F',
-                    fontWeight: '600'
-                  }}
-                >
-                  Learn More
-                </Button>
               </div>
             </Col>
           </Row>
@@ -1288,7 +1923,7 @@ function Home() {
                   e.target.style.boxShadow = '0 8px 25px rgba(79, 119, 127, 0.3)';
                 }}
               >
-                🔍 Explore All Programs
+                Explore All Programs
               </Button>
             </Col>
           </Row>
@@ -1356,10 +1991,21 @@ function Home() {
               }}
               >
                 <div style={{
-                  fontSize: '3rem',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  display: 'flex',
+                  justifyContent: 'center'
                 }}>
-                  💝
+                  <img 
+                    src="/images/edu1.jpg" 
+                    alt="Education Access" 
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '3px solid #175760'
+                    }}
+                  />
                 </div>
                 <h5 style={{
                   fontWeight: '700',
@@ -1428,10 +2074,21 @@ function Home() {
               }}
               >
                 <div style={{
-                  fontSize: '3rem',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  display: 'flex',
+                  justifyContent: 'center'
                 }}>
-                  🏢
+                  <img 
+                    src="/images/mscon.jpg" 
+                    alt="Empower Women MSCON" 
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '3px solid #175760'
+                    }}
+                  />
                 </div>
                 <h5 style={{
                   fontWeight: '700',
@@ -1488,10 +2145,21 @@ function Home() {
               }}
               >
                 <div style={{
-                  fontSize: '3rem',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  display: 'flex',
+                  justifyContent: 'center'
                 }}>
-                  🤝
+                  <img 
+                    src="/images/help.jpg" 
+                    alt="Health & Wellness" 
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '3px solid #175760'
+                    }}
+                  />
                 </div>
                 <h5 style={{
                   fontWeight: '700',
@@ -1548,10 +2216,21 @@ function Home() {
               }}
               >
                 <div style={{
-                  fontSize: '3rem',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  display: 'flex',
+                  justifyContent: 'center'
                 }}>
-                  🎯
+                  <img 
+                    src="/images/prog1.jpg" 
+                    alt="Community Development" 
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '3px solid #175760'
+                    }}
+                  />
                 </div>
                 <h5 style={{
                   fontWeight: '700',

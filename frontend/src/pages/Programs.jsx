@@ -108,7 +108,7 @@ function Programs() {
             <Col md={6} lg={4} className="mb-4">
               <Card className="h-100 shadow-lg" style={{ border: 'none', borderRadius: '15px', overflow: 'hidden' }}>
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src="/images/edu2.jpg"
+                  <img src="/images/mscon3.jpg"
                        alt="Women empowerment and support"
                        className="card-img-top"
                        style={{ height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }} />
@@ -261,7 +261,7 @@ function Programs() {
                           letterSpacing: '0.5px'
                         }}
                       >
-                        🤝 Community Partnerships
+                        Community Partnerships
                       </h5>
                       <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#495057' }}>
                         We work closely with local organizations, government agencies, and community leaders 
@@ -283,7 +283,7 @@ function Programs() {
                           letterSpacing: '0.5px'
                         }}
                       >
-                        📅 Community Events
+                        Community Events
                       </h5>
                       <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#495057' }}>
                         Regular workshops, seminars, and community gatherings that bring people together 
@@ -305,7 +305,7 @@ function Programs() {
                           letterSpacing: '0.5px'
                         }}
                       >
-                        ⚖️ Social Justice Advocacy
+                       Social Justice Advocacy
                       </h5>
                       <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#495057' }}>
                         Active advocacy for policies and practices that promote equality, fairness, and 
@@ -327,7 +327,7 @@ function Programs() {
                           letterSpacing: '0.5px'
                         }}
                       >
-                        🌱 Sustainable Solutions
+                        Sustainable Solutions
                       </h5>
                       <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#495057' }}>
                         Development and implementation of long-term, sustainable initiatives that create 

@@ -11,6 +11,7 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
 require('dotenv').config();
 
@@ -20,8 +21,31 @@ const paystack = require('paystack')(process.env.PAYSTACK_SECRET_KEY);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(helmet());
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
+  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100, // limit each IP to 100 requests per windowMs
+  message: {
+    success: false,
+    message: 'Too many requests from this IP, please try again later.'
+  }
+});
+
+// Apply rate limiting to all requests
+app.use(limiter);
+
+// Enhanced security middleware
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+      scriptSrc: ["'self'", 'https://js.paystack.co'],
+      imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'", 'https://api.paystack.co']
+    }
+  }
+}));
 app.use(cors({
   origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
   credentials: true
@@ -703,83 +727,6 @@ app.post('/api/contact', [
   }
 });
 
-// Route: GET /api/admin/dashboard - admin dashboard overview (US-5)
-app.get('/api/admin/dashboard', authenticateToken, requireAdmin, async (req, res) => {
-  try {
-    // Get donation statistics
-    const totalDonations = await Donation.countDocuments();
-    const successfulDonations = await Donation.countDocuments({ paymentStatus: 'success' });
-    const pendingDonations = await Donation.countDocuments({ paymentStatus: 'pending' });
-    
-    const totalAmountResult = await Donation.aggregate([
-      { $match: { paymentStatus: 'success' } },
-      { $group: { _id: null, total: { $sum: '$amount' } } }
-    ]);
-    const totalAmount = totalAmountResult[0]?.total || 0;
-    
-    // Get recent activity (last 30 days)
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-    
-    const recentDonationsCount = await Donation.countDocuments({
-      createdAt: { $gte: thirtyDaysAgo }
-    });
-    
-    const recentAmountResult = await Donation.aggregate([
-      { $match: { createdAt: { $gte: thirtyDaysAgo }, paymentStatus: 'success' } },
-      { $group: { _id: null, total: { $sum: '$amount' } } }
-    ]);
-    const recentAmount = recentAmountResult[0]?.total || 0;
-    
-    // Get top donors
-    const topDonors = await Donation.aggregate([
-      { $match: { paymentStatus: 'success' } },
-      { 
-        $group: { 
-          _id: '$email', 
-          firstName: { $first: '$firstName' },
-          lastName: { $first: '$lastName' },
-          totalAmount: { $sum: '$amount' },
-          donationCount: { $sum: 1 }
-        } 
-      },
-      { $sort: { totalAmount: -1 } },
-      { $limit: 5 }
-    ]);
-    
-    // Get other statistics
-    const totalVolunteers = await Volunteer.countDocuments();
-    const unreadContacts = await Contact.countDocuments({ status: 'unread' });
-    
-    res.json({
-      success: true,
-      data: {
-        overview: {
-          totalAmount,
-          totalDonations,
-          successfulDonations,
-          pendingDonations,
-          totalVolunteers,
-          unreadContacts
-        },
-        recentActivity: {
-          last30Days: {
-            count: recentDonationsCount,
-            totalAmount: recentAmount
-          }
-        },
-        topDonors
-      }
-    });
-  } catch (error) {
-    console.error('Error fetching admin dashboard:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Error fetching dashboard data'
-    });
-  }
-});
-
 // Route: PUT /api/admin/donation/:id/status - update donation status
 app.put('/api/admin/donation/:id/status', authenticateToken, requireAdmin, [
   body('status').isIn(['pending', 'success', 'failed', 'cancelled']).withMessage('Invalid status')
@@ -1036,76 +983,6 @@ app.get('/api/admin/dashboard', authenticateToken, requireAdmin, async (req, res
   }
 });
 
-// Route: PUT /api/admin/donation/:id/status - update donation status
-app.put('/api/admin/donation/:id/status', authenticateToken, requireAdmin, [
-  body('status').isIn(['pending', 'success', 'failed', 'cancelled']).withMessage('Invalid status')
-], handleValidationErrors, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { status } = req.body;
-    
-    const donation = await Donation.findByIdAndUpdate(
-      id,
-      { paymentStatus: status, updatedAt: new Date() },
-      { new: true }
-    );
-    
-    if (!donation) {
-      return res.status(404).json({
-        success: false,
-        message: 'Donation not found'
-      });
-    }
-    
-    res.json({
-      success: true,
-      message: 'Donation status updated successfully',
-      data: donation
-    });
-  } catch (error) {
-    console.error('Error updating donation status:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Error updating donation status'
-    });
-  }
-});
-
-// Route: PUT /api/admin/contact/:id/status - update contact message status
-app.put('/api/admin/contact/:id/status', authenticateToken, requireAdmin, [
-  body('status').isIn(['unread', 'read', 'responded']).withMessage('Invalid status')
-], handleValidationErrors, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { status } = req.body;
-    
-    const contact = await Contact.findByIdAndUpdate(
-      id,
-      { status, updatedAt: new Date() },
-      { new: true }
-    );
-    
-    if (!contact) {
-      return res.status(404).json({
-        success: false,
-        message: 'Contact message not found'
-      });
-    }
-    
-    res.json({
-      success: true,
-      message: 'Contact status updated successfully',
-      data: contact
-    });
-  } catch (error) {
-    console.error('Error updating contact status:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Error updating contact status'
-    });
-  }
-});
-
 // Route: GET /api/admin/settings - get payment settings
 app.get('/api/admin/settings', authenticateToken, requireAdmin, async (req, res) => {
   try {
@@ -1120,8 +997,8 @@ app.get('/api/admin/settings', authenticateToken, requireAdmin, async (req, res)
         donations: {
           minimumAmount: 10,
           maximumAmount: 100000,
-          currencies: ['NGN', 'USD'],
-          defaultCurrency: 'NGN'
+          currencies: ['GHS', 'USD'],
+          defaultCurrency: 'GHS'
         }
       }
     });

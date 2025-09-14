@@ -21,9 +21,9 @@ code {
   min-height: 75vh;
 }
 
-/* Smooth scrolling for anchor links */
+/* Disable smooth scrolling for instant navigation */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
 }
 
 /* Custom button hover effects */
