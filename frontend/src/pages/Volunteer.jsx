@@ -129,7 +129,7 @@ function Volunteer() {
       <section 
         className="py-5 position-relative" 
         style={{ 
-          marginTop: '120px',
+          marginTop: '100px',
           backgroundImage: 'url(/images/vol4.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',

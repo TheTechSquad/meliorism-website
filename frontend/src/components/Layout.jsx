@@ -1,104 +1,115 @@
 import React from 'react';
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import './Layout.css'; // Import the new CSS file
 
 function Layout({ children }) {
   const location = useLocation();
 
+  // Function to close dropdown and mobile menu when a link is clicked
+  const handleLinkClick = () => {
+    // Close the dropdown menu
+    const showDropCheckbox = document.getElementById('showDrop');
+    if (showDropCheckbox) {
+      showDropCheckbox.checked = false;
+    }
+    
+    // Close the mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    if (menuBtn) menuBtn.checked = false;
+    if (closeBtn) closeBtn.checked = false;
+  };
+
   return (
     <div className="App">
-      {/* Navbar with links to all sections */}
-      <Navbar bg="white" variant="light" expand="lg" fixed="top" style={{ 
-        padding: '10px 0'
-      }}>
-        <Container>
-          <Navbar.Brand as={Link} to="/" className="navbar-brand-optimized">
-            <img 
-              src="logo1.png" 
-              alt="Meliorism Partners Foundation Logo" 
-              height="60"
-              className="navbar-logo"
-              loading="eager"
-              style={{
-                transform: 'translate3d(0,0,0)',
-                backfaceVisibility: 'hidden',
-                imageRendering: 'optimizeSpeed'
-              }}
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle 
-            aria-controls="basic-navbar-nav" 
-            className="navbar-toggler-optimized"
-            style={{
-              border: 'none',
-              padding: '4px 8px',
-              backgroundColor: 'transparent',
-              transform: 'translate3d(0,0,0)',
-              backfaceVisibility: 'hidden'
-            }}
-          />
-          <Navbar.Collapse 
-            id="basic-navbar-nav"
-            style={{
-              transform: 'translate3d(0,0,0)',
-              backfaceVisibility: 'hidden',
-              contain: 'layout style paint'
-            }}
-          >
-            <Nav className="ms-auto">
-              <Nav.Link 
-                as={Link} 
+      {/* Custom Navigation */}
+      <nav>
+        <div className="wrapper">
+          <div className="logo">
+            <Link to="/">
+              <img 
+                src="/logo1.png" 
+                alt="Meliorism Partners Foundation Logo" 
+                style={{ height: '40px' }}
+              />
+            </Link>
+          </div>
+          <input type="radio" name="slider" id="menu-btn" />
+          <input type="radio" name="slider" id="close-btn" />
+          <ul className="nav-links">
+            <label htmlFor="close-btn" className="btn close-btn">
+              <i className="fas fa-times"></i>
+            </label>
+            <li>
+              <Link 
                 to="/" 
-                className={`nav-link-optimized ${location.pathname === '/' ? 'active' : ''}`}
+                className={location.pathname === '/' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 Home
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/about" 
-                className={`nav-link-optimized ${location.pathname === '/about' ? 'active' : ''}`}
+                className={location.pathname === '/about' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 About Us
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/programs" 
-                className={`nav-link-optimized ${location.pathname === '/programs' ? 'active' : ''}`}
+                className={location.pathname === '/programs' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 Programs
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/volunteer" 
-                className={`nav-link-optimized ${location.pathname === '/volunteer' ? 'active' : ''}`}
+                className={location.pathname === '/volunteer' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 Volunteer
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/projects" 
-                className={`nav-link-optimized ${location.pathname === '/projects' ? 'active' : ''}`}
+                className={location.pathname === '/projects' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 Projects
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/contact" 
-                className={`nav-link-optimized ${location.pathname === '/contact' ? 'active' : ''}`}
+                className={location.pathname === '/contact' ? 'active' : ''}
+                onClick={handleLinkClick}
               >
                 Contact
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/donate" 
-                className={`nav-donate-btn ${location.pathname === '/donate' ? 'active' : ''}`}
+                className={`donate-btn ${location.pathname === '/donate' ? 'active' : ''}`}
+                onClick={handleLinkClick}
               >
                 DONATE NOW
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+              </Link>
+            </li>
+          </ul>
+          <label htmlFor="menu-btn" className="btn menu-btn">
+            <i className="fas fa-bars"></i>
+          </label>
+        </div>
+      </nav>
 
       {/* Main content */}
       <main>

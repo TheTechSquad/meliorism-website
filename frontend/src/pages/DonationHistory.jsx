@@ -73,7 +73,7 @@ function DonationHistory() {
   }
 
   return (
-    <Container className="py-5" style={{ marginTop: '120px' }}>
+    <Container className="py-5" style={{ marginTop: '100px' }}>
       <Row>
         <Col>
           <h1 className="mb-4">My Donation History</h1>

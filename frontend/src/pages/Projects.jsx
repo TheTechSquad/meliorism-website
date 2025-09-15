@@ -8,7 +8,7 @@ function Projects() {
       <section 
         className="py-5" 
         style={{ 
-          marginTop: '120px', 
+          marginTop: '100px', 
           minHeight: '75vh', 
           display: 'flex', 
           alignItems: 'center',

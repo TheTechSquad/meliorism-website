@@ -135,7 +135,7 @@ function AdminDashboard() {
   }
 
   return (
-    <Container fluid className="py-4" style={{ marginTop: '120px' }}>
+    <Container fluid className="py-4" style={{ marginTop: '100px' }}>
       <Row>
         <Col>
           <h1 className="mb-4">Admin Dashboard</h1>

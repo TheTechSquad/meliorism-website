@@ -6,7 +6,7 @@ function About() {
     <>
 
       {/* Team Photo - Full Width Hero */}
-      <section className="p-0" style={{ marginTop: '120px' }}>
+      <section className="p-0" style={{ marginTop: '100px' }}>
         <div className="position-relative">
           <img src="/images/foraboutus.jpg"
                alt="Meliorism Partners Foundation Team"
@@ -35,7 +35,7 @@ function About() {
                   textTransform: 'uppercase'
                 }}
               >
-                About Meliorism Partners Foundation
+                About Us
               </h1>
               <div className="d-flex justify-content-center">
                 <p 
@@ -771,7 +771,7 @@ function About() {
                     >
                       General Secretary
                     </h5>
-                    <p className="text-muted">Ms. Stephanie Mensah</p>
+                    <p className="text-muted">Stephanie Mensah</p>
                   </div>
                 </Col>
                 
@@ -813,7 +813,7 @@ function About() {
                     >
                       Campus Director
                     </h5>
-                    <p className="text-muted">Mr. Ransford Amoako</p>
+                    <p className="text-muted">Ransford Amoako</p>
                   </div>
                 </Col>
                 <Col md={6} lg={4} className="text-center">
@@ -895,7 +895,7 @@ function About() {
                     >
                       MSCON Administrator
                     </h5>
-                    <p className="text-muted">Mrs. Juliiet Koudonu Seglah</p>
+                    <p className="text-muted">Mrs. Juliet Koudonu-Seglah</p>
                   </div>
                 </Col>
                 
@@ -917,7 +917,7 @@ function About() {
                     >
                       Counselling & Career Dev. Coach
                     </h5>
-                    <p className="text-muted">Mrs Steffi Korsah</p>
+                    <p className="text-muted">Steffi Korsah</p>
                   </div>
                 </Col>
                 <Col md={6} lg={4} className="text-center">

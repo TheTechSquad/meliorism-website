@@ -52,7 +52,7 @@ function DonationSuccess() {
 
   if (verificationStatus === 'loading') {
     return (
-      <Container className="py-5 text-center" style={{ marginTop: '120px' }}>
+      <Container className="py-5 text-center" style={{ marginTop: '100px' }}>
         <Spinner animation="border" variant="primary" />
         <h3 className="mt-3">Verifying your payment...</h3>
         <p className="text-muted">Please wait while we confirm your donation.</p>
@@ -61,7 +61,7 @@ function DonationSuccess() {
   }
 
   return (
-    <Container className="py-5" style={{ marginTop: '120px' }}>
+    <Container className="py-5" style={{ marginTop: '100px' }}>
       <Row className="justify-content-center">
         <Col lg={8}>
           {verificationStatus === 'success' && donationData && (

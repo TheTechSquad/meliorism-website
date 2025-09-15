@@ -53,6 +53,11 @@ html {
   backface-visibility: hidden;
   perspective: 1000px;
   isolation: isolate;
+  background: rgba(255, 255, 255, 0.95) !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(79, 119, 127, 0.1);
 }
 
 .navbar * {
@@ -123,11 +128,19 @@ html {
     transform: scale3d(1.02, 1.02, 1) translate3d(0, 0, 0);
   }
   
-  /* Optimize mobile navigation */
+/* Optimize mobile navigation */
+@media (max-width: 991.98px) {
   .nav-link-optimized {
     padding: 0.75rem 1rem !important;
     display: block;
     text-align: left;
+    margin: 5px 0 !important;
+    border-radius: 8px !important;
+  }
+  
+  .nav-link-optimized:hover {
+    background: rgba(79, 119, 127, 0.1) !important;
+    transform: translateX(5px) !important;
   }
   
   .nav-donate-btn {
@@ -135,6 +148,12 @@ html {
     display: inline-block;
     text-align: center;
   }
+
+  .navbar-brand-optimized {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+  }
+}
 }
 
 /* Critical CSS for ultra-fast navbar interactions */
@@ -321,31 +340,44 @@ html {
   transform: scale(1.02);
 }
 
-/* Optimized navbar brand */
+/* Modern navbar brand styling */
 .navbar-brand-optimized {
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 119, 127, 0.1);
 }
 
 .navbar-brand-optimized:hover {
   transform: scale(1.02);
+  background: rgba(79, 119, 127, 0.1);
+  box-shadow: 0 4px 15px rgba(79, 119, 127, 0.2);
 }
 
-/* Optimized navbar logo */
+/* Enhanced navbar logo */
 .navbar-logo {
-  transition: transform 0.2s ease;
-  border: none;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(79, 119, 127, 0.2);
   outline: none;
-  box-shadow: none;
-  border-radius: 8px;
-  padding: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 4px;
   margin: 0;
   will-change: transform;
+  background: white;
+  max-height: 65px;
+  width: auto;
 }
 
 .navbar-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(79, 119, 127, 0.3);
+  border-color: #4F777F;
 }
 
 /* Optimized navbar toggler */
@@ -364,22 +396,31 @@ html {
   transform: scale(1.1);
 }
 
-/* Optimized navigation links */
+/* Optimized navigation links - Modern clean design */
 .nav-link-optimized {
   font-weight: 600 !important;
   color: #4F777F !important;
-  margin: 0 10px !important;
+  margin: 0 15px !important;
   position: relative !important;
-  transition: color 0.2s ease !important;
-  will-change: color;
+  transition: all 0.3s ease !important;
+  will-change: color, transform;
+  padding: 12px 20px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 
 .nav-link-optimized.active {
   color: #175760 !important;
+  background: rgba(23, 87, 96, 0.1) !important;
+  transform: translateY(-1px);
 }
 
 .nav-link-optimized:hover {
   color: #175760 !important;
+  background: rgba(79, 119, 127, 0.15) !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(79, 119, 127, 0.2);
 }
 
 /* Optimized donate button */
@@ -423,26 +464,10 @@ html {
   transform: scale(1.05);
 }
 
-/* Navigation link hover effects */
+/* Navigation link hover effects - Clean text-only hover */
 .navbar-nav .nav-link {
   position: relative;
-  overflow: hidden;
-}
-
-.navbar-nav .nav-link:not([style*="border-radius"])::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--meliorism-primary);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.navbar-nav .nav-link:not([style*="border-radius"]):hover::before {
-  width: 80%;
+  overflow: visible;
 }
 
 .navbar-nav .nav-link:hover {
@@ -498,8 +523,129 @@ footer.bg-dark {
   box-shadow: 0 0 0 0.2rem rgba(79, 119, 127, 0.25);
 }
 
-/* Responsive improvements */
-@media (max-width: 768px) {
+/* Comprehensive Mobile Responsive Improvements */
+
+/* Mobile breakpoints: 576px (small), 768px (medium) */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Hero sections - reduce massive font sizes */
+  .hero-section h1,
+  h1[style*="clamp(3rem"],
+  h1[style*="clamp(2.5rem"] {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-section p,
+  p[style*="fontSize: '1.4rem'"],
+  p[style*="fontSize: '1.3rem'"] {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Card components - reduce spacing and fonts */
+  .card .card-body {
+    padding: 1rem !important;
+  }
+  
+  .card-title,
+  h4[style*="fontSize: '1.4rem'"],
+  h5[style*="fontSize: '1.3rem'"] {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .card-text,
+  p[style*="fontSize: '1rem'"] {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Button sizing */
+  .btn,
+  button[style*="padding: '10px 25px'"] {
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Statistics numbers */
+  div[style*="fontSize: '4rem'"] {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  /* Section spacing */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .navbar-brand img {
+    height: 35px !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-section h1,
+  h1[style*="clamp(3rem"],
+  h1[style*="clamp(2.5rem"] {
+    font-size: 2.2rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .hero-section p,
+  p[style*="fontSize: '1.4rem'"],
+  p[style*="fontSize: '1.3rem'"] {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .card .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .card-title,
+  h4[style*="fontSize: '1.4rem'"],
+  h5[style*="fontSize: '1.3rem'"] {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .card-text,
+  p[style*="fontSize: '1rem'"] {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .btn,
+  button[style*="padding: '10px 25px'"] {
+    padding: 9px 20px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  div[style*="fontSize: '4rem'"] {
+    font-size: 3rem !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
   .hero-section h1 {
     font-size: 2.5rem !important;
   }
@@ -514,6 +660,17 @@ footer.bg-dark {
   
   .navbar-brand img {
     height: 45px !important;
+  }
+  
+  .card-title,
+  h4[style*="fontSize: '1.4rem'"],
+  h5[style*="fontSize: '1.3rem'"] {
+    font-size: 1.2rem !important;
+  }
+  
+  .card-text,
+  p[style*="fontSize: '1rem'"] {
+    font-size: 0.95rem !important;
   }
 }
 
@@ -554,5 +711,95 @@ footer.bg-dark {
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+/* Mobile-specific overrides for inline styles */
+/* Using higher specificity to override inline styles */
+
+@media (max-width: 575.98px) {
+  /* Force override for large inline font sizes */
+  [style*="fontSize: 'clamp(3rem"] {
+    font-size: 1.8rem !important;
+  }
+  
+  [style*="fontSize: 'clamp(2.5rem"] {
+    font-size: 1.6rem !important;
+  }
+  
+  [style*="fontSize: '1.4rem'"] {
+    font-size: 1rem !important;
+  }
+  
+  [style*="fontSize: '1.3rem'"] {
+    font-size: 0.95rem !important;
+  }
+  
+  [style*="fontSize: '1.2rem'"] {
+    font-size: 0.9rem !important;
+  }
+  
+  [style*="fontSize: '4rem'"] {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Card body padding override */
+  [style*="padding: '50px 40px'"],
+  [style*="padding: '40px'"] {
+    padding: 1rem !important;
+  }
+  
+  /* Button padding override */
+  [style*="padding: '10px 25px'"] {
+    padding: 8px 16px !important;
+  }
+  
+  [style*="padding: '12px 20px'"] {
+    padding: 8px 16px !important;
+  }
+  
+  /* Margin overrides for better mobile spacing */
+  [style*="marginBottom: '2rem'"] {
+    margin-bottom: 1rem !important;
+  }
+  
+  [style*="marginBottom: '1.5rem'"] {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Background attachment fix for mobile performance */
+  [style*="backgroundAttachment: 'fixed'"] {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  [style*="fontSize: 'clamp(3rem"] {
+    font-size: 2.2rem !important;
+  }
+  
+  [style*="fontSize: 'clamp(2.5rem"] {
+    font-size: 2rem !important;
+  }
+  
+  [style*="fontSize: '1.4rem'"] {
+    font-size: 1.1rem !important;
+  }
+  
+  [style*="fontSize: '1.3rem'"] {
+    font-size: 1rem !important;
+  }
+  
+  [style*="fontSize: '4rem'"] {
+    font-size: 3rem !important;
+  }
+  
+  [style*="padding: '50px 40px'"],
+  [style*="padding: '40px'"] {
+    padding: 1.5rem !important;
+  }
+  
+  [style*="padding: '10px 25px'"] {
+    padding: 9px 20px !important;
   }
 }

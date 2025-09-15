@@ -66,7 +66,7 @@ function Donate() {
       <section 
         className="py-5 position-relative" 
         style={{ 
-          marginTop: '120px',
+          marginTop: '100px',
           backgroundImage: 'url(/images/don2.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: '60% 40%',

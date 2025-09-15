@@ -8,7 +8,7 @@ function Programs() {
       <section 
         className="py-5 position-relative" 
         style={{ 
-          marginTop: '120px',
+          marginTop: '100px',
           minHeight: '75vh',
           backgroundImage: 'url(/images/prog1.jpg)',
           backgroundSize: 'cover',

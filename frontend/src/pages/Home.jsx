@@ -7,7 +7,7 @@ function Home() {
     <>
       {/* Hero section with compelling background */}
       <section className="hero-section" style={{
-        marginTop: '120px',
+        marginTop: '100px',
         minHeight: '75vh',
         display: 'flex',
         alignItems: 'center',
