@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
+import { API_BASE_URL } from '../config/api';
 
 function Donate() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ function Donate() {
 
     try {
       console.log('Submitting donation:', formData);
-      const response = await fetch('/api/donate', {
+      const response = await fetch(`${API_BASE_URL}/api/donate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
