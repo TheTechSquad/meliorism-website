@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Table, Badge, Alert, Spinner, Pagination } from 'react-bootstrap';
+import { API_BASE_URL } from '../config/api';
 
 function DonationHistory() {
   const [donations, setDonations] = useState([]);

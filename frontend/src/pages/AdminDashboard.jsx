@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Table, Button, Badge, Alert, Spinner } from 'react-bootstrap';
+import { API_BASE_URL } from '../config/api';
 
 function AdminDashboard() {
   const [dashboardData, setDashboardData] = useState(null);
@@ -17,7 +18,7 @@ function AdminDashboard() {
   const fetchDashboardData = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(\${API_BASE_URL}/api/admin/dashboard', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/dashboard`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -37,7 +38,7 @@ function AdminDashboard() {
   const fetchDonations = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(\${API_BASE_URL}/api/donations', {
+      const response = await fetch(`${API_BASE_URL}/api/donations`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -55,7 +56,7 @@ function AdminDashboard() {
   const fetchContacts = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(\${API_BASE_URL}/api/contacts', {
+      const response = await fetch(`${API_BASE_URL}/api/contacts`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
