@@ -17,7 +17,7 @@ function AdminDashboard() {
   const fetchDashboardData = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin/dashboard', {
+      const response = await fetch(\${API_BASE_URL}/api/admin/dashboard', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -37,7 +37,7 @@ function AdminDashboard() {
   const fetchDonations = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/donations', {
+      const response = await fetch(\${API_BASE_URL}/api/donations', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -55,7 +55,7 @@ function AdminDashboard() {
   const fetchContacts = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/contacts', {
+      const response = await fetch(\${API_BASE_URL}/api/contacts', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -75,7 +75,7 @@ function AdminDashboard() {
   const updateDonationStatus = async (donationId, status) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/donation/${donationId}/status`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/donation/${donationId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ function AdminDashboard() {
   const updateContactStatus = async (contactId, status) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/contact/${contactId}/status`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/contact/${contactId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

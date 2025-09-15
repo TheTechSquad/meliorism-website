@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Alert, Spinner } from 'react-bootstrap';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
 function DonationSuccess() {
   const [searchParams] = useSearchParams();
@@ -21,7 +22,7 @@ function DonationSuccess() {
 
   const verifyPayment = async (reference) => {
     try {
-      const response = await fetch(`/api/verify-payment/${reference}`);
+      const response = await fetch(`${API_BASE_URL}/api/verify-payment/${reference}`);
       const data = await response.json();
 
       if (response.ok) {

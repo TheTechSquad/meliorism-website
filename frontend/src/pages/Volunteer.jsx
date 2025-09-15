@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
+import { API_BASE_URL } from '../config/api';
 
 function Volunteer() {
   const [formData, setFormData] = useState({
@@ -58,7 +59,7 @@ function Volunteer() {
     }
 
     try {
-      const response = await fetch('/api/volunteer', {
+      const response = await fetch(`${API_BASE_URL}/api/volunteer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

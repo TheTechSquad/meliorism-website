@@ -17,7 +17,7 @@ function DonationHistory() {
     try {
       setLoading(true);
       const token = localStorage.getItem('userToken');
-      const response = await fetch(`/api/user/donations?page=${page}&limit=10`, {
+      const response = await fetch(`${API_BASE_URL}/api/user/donations?page=${page}&limit=10`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
