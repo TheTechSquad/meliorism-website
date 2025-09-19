@@ -1037,13 +1037,42 @@ app.use('*', (req, res) => {
   });
 });
 
-// Connect to database on app initialization
-connectDB().then(() => {
-  console.log('MongoDB connection established');
-}).catch(err => {
-  console.error('MongoDB connection failed:', err);
+// Start server
+const startServer = async () => {
+  try {
+    await connectDB();
+    const server = app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running on port ${PORT}`);
+      console.log(`Health check: http://localhost:${PORT}/health`);
+      console.log(`Environment: ${process.env.NODE_ENV}`);
+    });
+    
+    // Handle server errors
+    server.on('error', (error) => {
+      console.error('Server error:', error);
+      process.exit(1);
+    });
+    
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (err, promise) => {
+  console.log('Unhandled Rejection at:', promise, 'reason:', err);
   process.exit(1);
 });
 
-// Export the app (don't start server here)
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  console.log('Uncaught Exception:', err);
+  process.exit(1);
+});
+
+if (require.main === module) {
+  startServer();
+}
+
 module.exports = app;

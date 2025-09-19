@@ -2,9 +2,9 @@
   "name": "meliorism-foundation-backend",
   "version": "1.0.0",
   "description": "Express server for Meliorism Foundation backend",
-  "main": "server.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "jest",
     "create-admin": "node scripts/createAdmin.js"
