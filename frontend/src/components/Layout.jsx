@@ -31,7 +31,7 @@ function Layout({ children }) {
               <img 
                 src="/logo1.png" 
                 alt="Meliorism Partners Foundation Logo" 
-                style={{ height: '40px' }}
+                style={{ height: '80px' }}
               />
             </Link>
           </div>
