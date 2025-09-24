@@ -7,7 +7,7 @@ function Contact() {
       {/* Contact header */}
       <section className="py-5" style={{ 
         marginTop: '100px', 
-        minHeight: '75vh', 
+        minHeight: '50vh', 
         display: 'flex', 
         alignItems: 'center',
         backgroundImage: 'url(/images/vol2.jpg)',
@@ -49,7 +49,7 @@ function Contact() {
       </section>
 
       {/* Contact information */}
-      <section className="py-5" style={{ 
+      <section className="py-3" style={{ 
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -89,7 +89,7 @@ function Contact() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.95)',
                     borderRadius: '25px',
-                    padding: '2.5rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
                     transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
@@ -225,7 +225,7 @@ function Contact() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.95)',
                     borderRadius: '25px',
-                    padding: '2.5rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
                     transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
@@ -365,7 +365,7 @@ function Contact() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.95)',
                     borderRadius: '25px',
-                    padding: '2.5rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
                     transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
@@ -501,7 +501,7 @@ function Contact() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.95)',
                     borderRadius: '25px',
-                    padding: '2.5rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
                     transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
@@ -638,7 +638,7 @@ function Contact() {
       </section>
 
       {/* Contact form */}
-      <section className="py-5" style={{
+      <section className="py-3" style={{
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -741,7 +741,7 @@ function Contact() {
       </section>
 
       {/* FAQ section */}
-      <section className="py-5" style={{ 
+      <section className="py-3" style={{ 
         position: 'relative',
         overflow: 'hidden'
       }}>

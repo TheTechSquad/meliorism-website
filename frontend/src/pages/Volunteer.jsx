@@ -130,11 +130,11 @@ function Volunteer() {
         className="py-5 position-relative" 
         style={{ 
           marginTop: '100px',
-          backgroundImage: 'url(/images/vol4.jpg)',
+          backgroundImage: 'url(/images/comm2.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          minHeight: '75vh'
+          minHeight: '50vh'
         }}
       >
         {/* Dark overlay for better text readability */}
@@ -150,7 +150,7 @@ function Volunteer() {
           <Row>
             <Col lg={8} className="mx-auto text-center">
               <h1 className="display-4 fw-bold mb-4" style={{
-                fontWeight: '900',
+                fontWeight: '200',
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
                 color: 'white',

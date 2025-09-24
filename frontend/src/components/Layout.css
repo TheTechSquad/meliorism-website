@@ -304,3 +304,22 @@ main {
 nav input {
   display: none;
 }
+
+/* Newsletter input placeholder styling */
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1;
+}
+
+.newsletter-input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.newsletter-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}

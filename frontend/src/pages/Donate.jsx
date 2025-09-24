@@ -71,7 +71,7 @@ function Donate() {
           backgroundSize: 'cover',
           backgroundPosition: '60% 40%',
           backgroundRepeat: 'no-repeat',
-          minHeight: '75vh',
+          minHeight: '50vh',
           display: 'flex',
           alignItems: 'center'
         }}
@@ -93,14 +93,14 @@ function Donate() {
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
                 textShadow: '4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6)',
-                fontSize: 'clamp(2.5rem, 6vw, 4.5rem)'
+                fontSize: 'clamp(2.5rem, 4vw, 4rem)'
               }}>Make a Donation</h1>
               <p className="text-white" style={{
                 fontWeight: '500',
                 lineHeight: '1.7',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
-                maxWidth: '800px',
+                fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)',
+                maxWidth: '700px',
                 margin: '0 auto'
               }}>
                 Your contribution helps us continue our mission of creating positive change in communities. 

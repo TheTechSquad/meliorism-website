@@ -8,12 +8,12 @@ function About() {
       {/* Team Photo - Full Width Hero */}
       <section className="p-0" style={{ marginTop: '100px' }}>
         <div className="position-relative">
-          <img src="/images/foraboutus.jpg"
+          <img src="/images/team 1.jpg"
                alt="Meliorism Partners Foundation Team"
                className="w-100"
                style={{
-                 height: '75vh',
-                 minHeight: '500px',
+                 height: '50vh',
+                 minHeight: '300px',
                  objectFit: 'cover',
                  objectPosition: 'center'
                }} />
@@ -28,10 +28,10 @@ function About() {
               <h1 
                 className="fw-bold mb-4" 
                 style={{ 
-                  fontSize: 'clamp(2rem, 6vw, 4rem)',
+                  fontSize: 'clamp(2rem, 4vw, 4rem)',
                   textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5)',
                   letterSpacing: '1.5px',
-                  fontWeight: '900',
+                  fontWeight: '200',
                   textTransform: 'uppercase'
                 }}
               >
@@ -58,7 +58,7 @@ function About() {
         </div>
       </section>
       {/* Mission Statement */}
-      <section style={{ padding: '80px 0', background: '#F4F2F5' }}>
+      <section style={{ padding: '20px 0', background: '#F4F2F5' }}>
         <Container>
           <Row>
             <Col lg={8} className="mx-auto text-center">
@@ -76,8 +76,8 @@ function About() {
               <p style={{
                 fontSize: '1.2rem',
                 color: '#4F777F',
-                lineHeight: '1.8',
-                marginBottom: '2rem'
+                lineHeight: '1.6',
+                marginBottom: '0.5rem'
               }}>
                 We strive to create a supportive environment that fosters critical thinking, creativity, and
                 lifelong learning. By investing in education and personal growth, we aim to transform
@@ -91,7 +91,7 @@ function About() {
 
       {/* Mission Statement */}
       <section style={{
-        padding: '80px 0',
+        padding: '15px 0',
         background: 'linear-gradient(135deg, #4F777F 0%, #175760 100%)',
         color: 'white'
       }}>
@@ -102,7 +102,7 @@ function About() {
                 fontSize: 'clamp(2.5rem, 6vw, 4rem)',
                 fontWeight: '900',
                 textAlign: 'center',
-                marginBottom: '3rem',
+                marginBottom: '1.3rem',
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
                 textShadow: '2px 2px 4px rgba(255, 255, 255, 0.3)'
@@ -114,8 +114,8 @@ function About() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     borderRadius: '20px',
-                    padding: '2rem',
-                    height: '100%',
+                    padding: '1.5rem',
+                    height: '90%',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.2)'
                   }}>
@@ -127,7 +127,7 @@ function About() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '1.5rem'
+                      marginBottom: '1.3rem'
                     }}>
                       <span style={{ fontSize: '1.5rem' }}>🎓</span>
                     </div>
@@ -150,8 +150,8 @@ function About() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     borderRadius: '20px',
-                    padding: '2rem',
-                    height: '100%',
+                    padding: '1.5rem',
+                    height: '90%',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.2)'
                   }}>
@@ -169,7 +169,7 @@ function About() {
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 
-                      marginBottom: '1rem',
+                      marginBottom: '2rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
                       fontSize: '1.3rem'
@@ -186,8 +186,8 @@ function About() {
                   <div style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     borderRadius: '20px',
-                    padding: '2rem',
-                    height: '100%',
+                    padding: '1.5rem',
+                    height: '90%',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.2)'
                   }}>
@@ -205,7 +205,7 @@ function About() {
                     </div>
                     <h4 style={{ 
                       fontWeight: '800', 
-                      marginBottom: '1rem',
+                      marginBottom: '2rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
                       fontSize: '1.3rem'
@@ -225,7 +225,7 @@ function About() {
       </section>
 
       {/* Core Values */}
-      <section style={{ padding: '80px 0', background: '#F4F2F5' }}>
+      <section style={{ padding: '50px 0', background: '#F4F2F5' }}>
         <Container>
           <Row>
             <Col lg={10} className="mx-auto">
@@ -257,7 +257,7 @@ function About() {
                   <div style={{
                     background: 'white',
                     borderRadius: '20px',
-                    padding: '2rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                     transition: 'transform 0.3s ease'
@@ -336,7 +336,7 @@ function About() {
                   <div style={{
                     background: 'white',
                     borderRadius: '20px',
-                    padding: '2rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                     transition: 'transform 0.3s ease'
@@ -419,7 +419,7 @@ function About() {
                   <div style={{
                     background: 'white',
                     borderRadius: '20px',
-                    padding: '2rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                     transition: 'transform 0.3s ease'
@@ -511,7 +511,7 @@ function About() {
                   <div style={{
                     background: 'white',
                     borderRadius: '20px',
-                    padding: '2rem 1.5rem',
+                    padding: '1.5rem 1rem',
                     height: '100%',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                     transition: 'transform 0.3s ease'
@@ -645,7 +645,7 @@ function About() {
 
       {/* Vision Statement */}
       <section style={{
-        padding: '80px 0',
+        padding: '20px 0',
         background: 'linear-gradient(135deg, #175760 0%, #4F777F 100%)',
         color: 'white'
       }}>
@@ -692,7 +692,7 @@ function About() {
       </section>
 
       {/* Meet Our Team */}
-      <section className="py-5">
+      <section className="py-3">
         <Container>
           <Row>
             <Col lg={10} className="mx-auto">

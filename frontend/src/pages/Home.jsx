@@ -8,7 +8,7 @@ function Home() {
       {/* Hero section with compelling background */}
       <section className="hero-section" style={{
         marginTop: '100px',
-        minHeight: '75vh',
+        minHeight: '55vh',
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
@@ -51,7 +51,7 @@ function Home() {
               <div style={{
                 background: 'rgba(255, 255, 255, 0.98)',
                 borderRadius: '25px',
-                padding: '50px 40px',
+                padding: '20px 15px',
                 boxShadow: '0 25px 80px rgba(0,0,0,0.15)',
                 backdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255, 255, 255, 0.3)',
@@ -61,7 +61,7 @@ function Home() {
                   fontSize: 'clamp(2rem, 5vw, 3.2rem)',
                   fontWeight: '900',
                   color: '#175760',
-                  lineHeight: '1.2',
+                  lineHeight: '1.1',
                   marginBottom: '1.5rem',
                   textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
                   letterSpacing: '2px',
@@ -93,7 +93,7 @@ function Home() {
                 <div style={{
                   borderLeft: '5px solid #4F777F',
                   paddingLeft: '1.5rem',
-                  marginBottom: '2.5rem',
+                  marginBottom: '2rem',
                   background: 'linear-gradient(135deg, rgba(79, 119, 127, 0.08), rgba(175, 186, 188, 0.05))',
                   padding: '18px 25px',
                   borderRadius: '0 12px 12px 0'
@@ -526,14 +526,14 @@ function Home() {
                     fontSize: '1.3rem',
                     marginBottom: '8px'
                   }}>
-                    Dr. Akosua Mensah
+                    Mrs. Juliet Koudonu-Seglah
                   </h5>
                   <p style={{
                     opacity: 0.9,
                     fontSize: '1rem',
                     margin: 0
                   }}>
-                    Community Development Specialist & MSCON Program Coordinator
+                    MSCON Program Coordinator
                   </p>
                 </div>
               </div>

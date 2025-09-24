@@ -6,10 +6,10 @@ function Programs() {
     <>
       {/* Programs overview */}
       <section 
-        className="py-5 position-relative" 
+        className="py-3 position-relative d-flex align-items-center" 
         style={{ 
           marginTop: '100px',
-          minHeight: '75vh',
+          minHeight: '50vh',
           backgroundImage: 'url(/images/prog1.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -31,10 +31,10 @@ function Programs() {
               <h1 
                 className="fw-bold mb-4 text-white" 
                 style={{ 
-                  fontSize: 'clamp(3rem, 8vw, 6rem)',
+                  fontSize: 'clamp(3rem, 5vw, 6rem)',
                   textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5)',
                   letterSpacing: '2px',
-                  fontWeight: '900',
+                  fontWeight: '100px',
                   textTransform: 'uppercase'
                 }}
               >
@@ -58,7 +58,7 @@ function Programs() {
       </section>
 
       {/* Main Programs */}
-      <section className="py-5" style={{ background: '#F4F2F5' }}>
+      <section className="py-3" style={{ background: '#F4F2F5' }}>
         <Container>
           <Row>
             <Col md={6} lg={4} className="mb-4">
@@ -199,7 +199,7 @@ function Programs() {
 
       {/* Community Development */}
       <section 
-        className="py-5 position-relative" 
+        className="py-3 position-relative" 
         style={{
           backgroundImage: 'url(/images/prog2.jpg)',
           backgroundSize: 'cover',
@@ -344,7 +344,7 @@ function Programs() {
 
       {/* Program Impact */}
       <section 
-        className="py-5 position-relative" 
+        className="py-3 position-relative d-flex align-items-center" 
         style={{ 
           backgroundImage: 'url(/images/prog3.jpg)',
           backgroundSize: 'cover',

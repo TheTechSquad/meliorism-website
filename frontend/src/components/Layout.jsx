@@ -182,37 +182,62 @@ function Layout({ children }) {
                   Follow Us
                 </h6>
                 <div className="d-flex gap-3">
-                  {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((platform) => (
-                    <button 
-                      key={platform}
+                  {[
+                    { name: 'Facebook', icon: '/images/facebook.png', url: 'https://www.facebook.com/LambertIsreal' },
+                    { name: 'LinkedIn', icon: '/images/linkedin.png', url: 'https://www.linkedin.com/company/meliorism-partners-foundation' },
+                    { name: 'Instagram', icon: '/images/instagram.png', url: 'https://www.instagram.com/meliorism_partners_foundation?igsh=MWU1bzc2b2I2cGR0Ng%3D%3D&utm_source=qr' },
+                    { name: 'X', icon: '/images/X.png', url: 'https://x.com/meliorismpf?s=21' },
+                    { name: 'TikTok', icon: '/images/tiktok.png', url: 'https://www.tiktok.com/@meliorism.partner?_t=ZM-8znr2VCkaKj&_r=1' }
+                  ].map((platform) => (
+                    <a
+                      key={platform.name}
+                      href={platform.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       style={{
                         width: '45px',
                         height: '45px',
                         borderRadius: '50%',
                         background: 'rgba(255, 255, 255, 0.1)',
                         border: '2px solid rgba(255, 255, 255, 0.2)',
-                        color: 'white',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         transition: 'all 0.3s ease',
                         cursor: 'pointer',
-                        fontSize: '0.9rem',
-                        fontWeight: '600'
+                        textDecoration: 'none',
+                        padding: '8px'
                       }}
                       onMouseOver={(e) => {
-                        e.target.style.background = 'white';
-                        e.target.style.color = '#175760';
-                        e.target.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.background = 'white';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
                       }}
                       onMouseOut={(e) => {
-                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                        e.target.style.color = 'white';
-                        e.target.style.transform = 'translateY(0)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = 'none';
                       }}
                     >
-                      {platform[0]}
-                    </button>
+                      <img 
+                        src={platform.icon} 
+                        alt={platform.name} 
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          transition: 'transform 0.3s ease, opacity 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.transform = 'scale(1.1)';
+                          e.target.style.opacity = '0.8';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.transform = 'scale(1)';
+                          e.target.style.opacity = '1';
+                        }}
+                      />
+                    </a>
                   ))}
                 </div>
               </div>
@@ -274,11 +299,11 @@ function Layout({ children }) {
                 Contact Info
               </h6>
               <div style={{ fontSize: '0.95rem', lineHeight: '1.8' }}>
-                <p style={{ 
+                <div style={{ 
                   marginBottom: '15px',
                   color: 'rgba(255, 255, 255, 0.9)',
                   display: 'flex',
-                  alignItems: 'center'
+                  alignItems: 'flex-start'
                 }}>
                   <span style={{
                     background: 'rgba(255, 255, 255, 0.1)',
@@ -289,12 +314,27 @@ function Layout({ children }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '12px',
-                    fontSize: '0.8rem'
+                    padding: '8px',
+                    flexShrink: 0
                   }}>
-                    📧
+                    <img 
+                      src="/images/email.png" 
+                      alt="Email" 
+                      style={{
+                        width: '18px',
+                        height: '18px',
+                        objectFit: 'contain'
+                      }}
+                    />
                   </span>
-                  meliorismpartnersfoundation@gmail.com
-                </p>
+                  <span style={{
+                    wordBreak: 'break-all',
+                    fontSize: '0.85rem',
+                    lineHeight: '1.4'
+                  }}>
+                    meliorismpartnersfoundation@gmail.com
+                  </span>
+                </div>
                 <p style={{ 
                   marginBottom: '15px',
                   color: 'rgba(255, 255, 255, 0.9)',
@@ -310,9 +350,17 @@ function Layout({ children }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '12px',
-                    fontSize: '0.8rem'
+                    padding: '8px'
                   }}>
-                    📞
+                    <img 
+                      src="/images/phone-call.png" 
+                      alt="Phone" 
+                      style={{
+                        width: '18px',
+                        height: '18px',
+                        objectFit: 'contain'
+                      }}
+                    />
                   </span>
                   +233(0)591517852
                 </p>
@@ -331,9 +379,17 @@ function Layout({ children }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '12px',
-                    fontSize: '0.8rem'
+                    padding: '8px'
                   }}>
-                    📞
+                    <img 
+                      src="/images/phone-call.png" 
+                      alt="Phone" 
+                      style={{
+                        width: '18px',
+                        height: '18px',
+                        objectFit: 'contain'
+                      }}
+                    />
                   </span>
                   +233(0)556102456
                 </p>
@@ -365,6 +421,7 @@ function Layout({ children }) {
                 <input
                   type="email"
                   placeholder="Your email"
+                  className="newsletter-input"
                   style={{
                     flex: 1,
                     padding: '12px 15px',
@@ -372,7 +429,17 @@ function Layout({ children }) {
                     border: '2px solid rgba(255, 255, 255, 0.2)',
                     background: 'rgba(255, 255, 255, 0.1)',
                     color: 'white',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
+                    outline: 'none',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.border = '2px solid rgba(255, 255, 255, 0.4)';
+                    e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.border = '2px solid rgba(255, 255, 255, 0.2)';
+                    e.target.style.background = 'rgba(255, 255, 255, 0.1)';
                   }}
                 />
                 <button style={{

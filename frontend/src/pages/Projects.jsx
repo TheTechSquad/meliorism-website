@@ -9,7 +9,7 @@ function Projects() {
         className="py-5" 
         style={{ 
           marginTop: '100px', 
-          minHeight: '75vh', 
+          minHeight: '50vh', 
           display: 'flex', 
           alignItems: 'center',
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/vol3.jpg)',
